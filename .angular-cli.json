@@ -6,7 +6,7 @@
   "apps": [
     {
       "root": "src",
-      "outDir": "dist",
+      "outDir": "public",
       "assets": [
         "assets",
         "favicon.ico"
@@ -37,8 +37,7 @@
         "assets/css/plugins/chosen/bootstrap-chosen.css",
         "assets/css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css",
         "assets/iconfont/commonIconfont/iconfont.css",
-        "assets/iconfont/projectIconfont/iconfont.css",
-        "assets/css/style.css"
+        "assets/iconfont/projectIconfont/iconfont.css"
       ],
       "scripts": [
         "assets/js/jquery-3.1.1.min.js",

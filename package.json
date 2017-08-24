@@ -5,11 +5,11 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build-dev": "rm -rf public && ng build --env=dev --aot --prod",
-    "build-sta": "rm -rf public && ng build --env=sta --aot --prod",
-    "build-pro": "rm -rf public && ng build --env=pro --aot --prod",
+    "build-dev": "rm -rf public && ng build --env=dev --aot -prod",
+    "build-sta": "rm -rf public && ng build --env=sta --aot -prod",
+    "build-pro": "rm -rf public && ng build --env=pro --aot -prod",
     "test": "ng test",
-    "lint": "ng lint",
+    "lint": "ng lint -fix",
     "e2e": "ng e2e"
   },
   "private": true,
@@ -23,8 +23,10 @@
     "@angular/platform-browser": "^4.2.4",
     "@angular/platform-browser-dynamic": "^4.2.4",
     "@angular/router": "^4.2.4",
+    "@types/lodash": "^4.14.74",
     "core-js": "^2.4.1",
     "express": "^4.15.4",
+    "lodash": "^4.17.4",
     "rxjs": "^5.4.2",
     "zone.js": "^0.8.14"
   },

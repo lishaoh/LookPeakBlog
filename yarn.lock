@@ -173,6 +173,10 @@
   dependencies:
     "@types/jasmine" "*"
 
+"@types/lodash@^4.14.74":
+  version "4.14.74"
+  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.74.tgz#ac3bd8db988e7f7038e5d22bd76a7ba13f876168"
+
 "@types/node@^6.0.46", "@types/node@~6.0.60":
   version "6.0.87"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-6.0.87.tgz#5ab5774f8351a33a935099fa6be850aa0b0ad564"

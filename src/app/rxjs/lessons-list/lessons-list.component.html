@@ -1,8 +1,15 @@
-<table class="table table-responsive">
-  <tbody>
-    <tr *ngFor="let lesson of lessons">
-      <td>{{lesson.description}}</td>
-      <td>{{lesson.duration}}</td>
-    </tr>
-  </tbody>
-</table>
+<div class="border-left border-right border-top lesson-list">
+  <div class="clearfix border-bottom p-md text-left" style="cursor: pointer;" *ngFor="let lesson of lessons">
+    <div class="col-sm-2 pull-left">
+      <input type="checkbox" (click)="toggleLessonViewed(lesson)">
+    </div>
+    <div class="col-sm-8 pull-left {{lesson.completed? 'checkbox-chosen': ''}}">
+      <h3 class="control-label block">{{lesson.description}}</h3>
+    </div>
+    <div class="col-sm-2 pull-right {{lesson.completed? 'checkbox-chosen': ''}}">
+      <!--<li class="glyphicon glyphicon-time" style="font-size: 20px;"></li>-->
+      <!--<div class="m-t-sm">{{lesson.duration}}</div>-->
+      <a class="btn btn-sm btn-danger" (click)="delete(lesson)">X</a>
+    </div>
+  </div>
+</div>

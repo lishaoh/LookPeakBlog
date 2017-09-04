@@ -33,6 +33,7 @@ class EventBus implements Subject {
     if (!observersPerType) {
       this.observers[eventType] = [];
     }
+    console.log(this.observers);
     return this.observers[eventType];
   }
 }

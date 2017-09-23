@@ -1,7 +1,7 @@
 <div class="border-left border-right border-top lesson-list">
   <div class="clearfix border-bottom p-md text-left" style="cursor: pointer;" *ngFor="let lesson of lessons">
     <div class="col-sm-2 pull-left">
-      <input type="checkbox" (click)="toggleLessonViewed(lesson)">
+      <input [checked]="lesson.completed" type="checkbox" (click)="toggleLessonViewed(lesson)">
     </div>
     <div class="col-sm-8 pull-left {{lesson.completed? 'checkbox-chosen': ''}}">
       <h3 class="control-label block">{{lesson.description}}</h3>

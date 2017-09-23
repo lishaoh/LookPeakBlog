@@ -17,7 +17,7 @@ export class LessonsListComponent implements OnInit, AfterViewInit, Observer {
 
   ngOnInit() {
     console.log('lesson list component is registerd as observer ...');
-    store.lessonsList$.subscribe(this);
+    store.subscribe(this);
   }
 
   next(data: Lesson[]) {

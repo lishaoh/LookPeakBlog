@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AAAA,YAAa;EACX,UAAU,EAAE,oBAAoB;EAChC,KAAK,EAAE,KAAK;EACZ,MAAM,EAAE,SAAS;EACjB,KAAK,EAAE,IAAI;EACX,6BAAiB;IACf,KAAK,EAAE,SAAS",
-"sources": ["lessons-list.component.scss"],
-"names": [],
-"file": "lessons-list.component.css"
-}

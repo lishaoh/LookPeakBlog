@@ -1,28 +1,23 @@
-# LookPeakBlog
+## 说明
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.3.1.
+此博客模板 Fork 自仓库：[cnfeat/blog.io: 简单直接可用博客模板](https://github.com/cnfeat/blog.io)
 
-## Development server
+配套说用说明：[如何搭建一个独立博客——简明 GitHub Pages与 jekyll 教程 - 读立写生](http://www.cnfeat.com/blog/2014/05/10/how-to-build-a-blog/)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## 博客模板修订清单
 
-## Code scaffolding
+文档内有详细注释，可按注释逐个修订
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+* 博客名字、作者信息、浏览器小图标等：_config.yml 
+* 个人介绍页面：about.md
+* 代表作页面：milestone.md
+* 文章模板：blog.io/_posts/2015-03-02-how-to-write.md 
+* 
 
-## Build
+## 模板作者
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+陈素封，博客：独立写生：[cnfeat.com](cnfeat.com)
 
-## Running unit tests
+联系方式：cnfeat@gmail.com
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).

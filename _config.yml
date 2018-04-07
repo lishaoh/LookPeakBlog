@@ -126,7 +126,7 @@ markdown:
     - markdown-it-emoji
 
 ## Themes: https://hexo.io/themes/
-theme: blackBlue
+theme: landscape
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html

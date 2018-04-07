@@ -1,9 +1,9 @@
 ---
-title: 微信公众号遇到的那些坑
+title: 微信JSSDK遇到的那些坑
 ---
 作为一个前端开发者，相信很多同道中人在微信公众号的开发中被坑的很惨，我也分享开发过程中的一点点经验给大家，可以减少很多弯路。由于项目需要，前端开发使用的是angular4.0技术，微信开发工具v1.02。前端开发公众号最坑的就是微信JSSDK的使用，前面坑路漫漫，我还得一步一步趟过去。
 
-## JSSDK使用报错
+## JSSDK使用报错nod
 
 ### 1. config:invalid signature一直报这个错误
 &nbsp;&nbsp;&nbsp;&nbsp;`建议：首先查看微信官方网站给出的解决方案.`[链接](http://mp.weixin.qq.com/wiki/7/aaa137b55fb2e0456bf8dd9148dd613f.html)

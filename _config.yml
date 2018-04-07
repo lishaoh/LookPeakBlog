@@ -59,7 +59,7 @@ ga_track_id:             # Format: UA-xxxxxx-xx
 ga_domain:
 
 # Sidebar settings
-sidebar-about-description: # 个人描述
+sidebar-about-description:  大智若愚 # 个人描述
 sidebar-avatar: http://img.duoziwang.com/2016/09/02/14133334647.jpg    # use absolute URL
 
 

@@ -12,7 +12,7 @@ timezone:
 # custom Site settings
 # more detail check out docs
 SEOTitle: ShaoHua's blog
-header-img: //o7bkkhiex.bkt.clouddn.com/lion-blur-bg.jpg
+header-img: http://img.duoziwang.com/2016/09/02/14133334647.jpg
 email: lsh94753@gmail.com
 description: "李少华在 Github 上的个人博客"
 keyword: # seo key words
@@ -60,7 +60,7 @@ ga_domain:
 
 # Sidebar settings
 sidebar-about-description: # 个人描述
-sidebar-avatar:     # use absolute URL
+sidebar-avatar: http://img.duoziwang.com/2016/09/02/14133334647.jpg    # use absolute URL
 
 
 # Featured Tags
@@ -126,14 +126,14 @@ markdown:
     - markdown-it-emoji
 
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: anisina
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: git@git.coding.net/ShaoHuaLi/ShaoHuaLi.coding.me.git
-  branch:
+  repo: https://git.coding.net/ShaoHuaLi/ShaoHuaLi.coding.me.git
+  branch: master
 
 
 # img CDN path

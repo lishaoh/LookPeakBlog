@@ -67,7 +67,7 @@ thanks @HipHopCoderS PR :) and all users
 
 ## General
 
-- **Author** : Haojen Ma
+- **Author** :ShaoHua Li
 - **Version** : 2.0
 - **Compatibility** : Hexo 3 or later
 

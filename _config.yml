@@ -5,14 +5,14 @@
 # Site
 title: Andrew # your blog title name
 subtitle:
-author: ShaoHua Li # 作者
+author: Andrew # 作者
 language:
 timezone:
 
 # custom Site settings
 # more detail check out docs
-SEOTitle: ShaoHua's blog
-header-img: http://img.duoziwang.com/2016/09/02/14133334647.jpg
+SEOTitle: Andrew's blog
+header-img: https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=196324866,934963000&fm=27&gp=0.jpg
 email: lsh94753@gmail.com
 description: "李少华在 Github 上的个人博客"
 keyword: # seo key words
@@ -29,12 +29,12 @@ permalink_defaults:
 
 # SNS settings
 # RSS:
-#weibo_username: ''
-#zhihu_username:
+weibo_username: 5831478442/profile
+zhihu_username: lishaoh
 github_username: lishaoh
-#twitter_username:
-facebook_username:
-linkedin_username:
+#twitter_username: lishaoh
+#facebook_username: lishaoh
+#linkedin_username: lishaoh
 
 # Build settings
 anchorjs: false                        # if you want to customize anchor. check out line:181 of `post.html`
@@ -60,7 +60,7 @@ ga_domain:
 
 # Sidebar settings
 sidebar-about-description:  大智若愚 # 个人描述
-sidebar-avatar: http://img.duoziwang.com/2016/09/02/14133334647.jpg    # use absolute URL
+sidebar-avatar: https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=196324866,934963000&fm=27&gp=0.jpg    # use absolute URL
 
 
 # Featured Tags
@@ -146,8 +146,8 @@ clip-avatar: "?imageView2/2/w/300/h/300/interlace/1/q/90"
 clip-home-post-bg: "?imageView2/1/w/800/h/300/interlace/1/q/70"
 
 # post default images
-post-default-img: #博文默认的图片
-post-default-img-mobile: #移动端显示的图片
+post-default-img: http://img2.imgtn.bdimg.com/it/u=3091906380,1426879938&fm=27&gp=0.jpg #博文默认的图片
+post-default-img-mobile: http://img2.imgtn.bdimg.com/it/u=3091906380,1426879938&fm=27&gp=0.jpg #移动端显示的图片
 
 # search api , set your custom key
 swiftype_key:

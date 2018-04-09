@@ -1212,4 +1212,9 @@ img::-moz-selection {
     width:0;
 }
 
+p {
+    font-style: italic;
+    font-family: sans-serif;
+}
+
 

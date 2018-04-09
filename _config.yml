@@ -12,7 +12,7 @@ timezone:
 # custom Site settings
 # more detail check out docs
 SEOTitle: Andrew's blog
-header-img: https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=196324866,934963000&fm=27&gp=0.jpg
+header-img: images/home.jpg
 email: lsh94753@gmail.com
 description: "李少华在 Github 上的个人博客"
 keyword: # seo key words
@@ -60,7 +60,7 @@ ga_domain:
 
 # Sidebar settings
 sidebar-about-description:  大智若愚 # 个人描述
-sidebar-avatar: https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=196324866,934963000&fm=27&gp=0.jpg    # use absolute URL
+sidebar-avatar: images/avatar.jpeg    # use absolute URL
 
 
 # Featured Tags
@@ -146,8 +146,8 @@ clip-avatar: "?imageView2/2/w/300/h/300/interlace/1/q/90"
 clip-home-post-bg: "?imageView2/1/w/800/h/300/interlace/1/q/70"
 
 # post default images
-post-default-img: http://img2.imgtn.bdimg.com/it/u=3091906380,1426879938&fm=27&gp=0.jpg #博文默认的图片
-post-default-img-mobile: http://img2.imgtn.bdimg.com/it/u=3091906380,1426879938&fm=27&gp=0.jpg #移动端显示的图片
+post-default-img: https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1523271490186&di=32a5c4bc5275d71ad5ca11ea4b8899eb&imgtype=0&src=http%3A%2F%2Fwww.jituwang.com%2Fuploads%2Fallimg%2F150830%2F258381-150S011133046.jpg #博文默认的图片
+post-default-img-mobile: https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1523271603142&di=be4db47c9ddad9cc69dae89ca78f0bec&imgtype=0&src=http%3A%2F%2Fbpic.ooopic.com%2F16%2F67%2F95%2F16679525-a0b2cc218fe33d9819656c5429c3d4c8-3.jpg #移动端显示的图片
 
 # search api , set your custom key
 swiftype_key:

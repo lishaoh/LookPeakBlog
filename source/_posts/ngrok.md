@@ -18,7 +18,7 @@ title: 微信公众号本地调试小技巧
 ![](/images/ngrok3.jpg)
 此处有一个坑，网上很多都说这里的token是随便写的，的确，但是作为一个前端开发者，在没有后端资源情况下随便填写的token总是报token无效错误，这是因为保存修改时微信会向填写的URL发送一个验证请求，验证token是否有效，但是我们不知道token是多少，现在如何做呢？我有node.js爸爸，还怕什么呢，我们可以本地起一个服务来监听微信请求的URL，上面说到微信此时会发起一个get请求到
 `http://4f75fc79.ngrok.io`那我就本地写一个服务来监听，只要服务里的token和修改的一致不就可以匹配了吗？说干就干，直接上代码
-```angularjs
+```js
 var PORT=80;                 //监听80端口号
 var http=require('http');  
 var qs=require('qs');

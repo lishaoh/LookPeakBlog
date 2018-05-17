@@ -6,7 +6,7 @@ title: 微信JSSDK遇到的那些坑
 ## JSSDK使用报错
 
 ### 1. config:invalid signature一直报这个错误
-&nbsp;&nbsp;&nbsp;&nbsp;`建议：首先查看微信官方网站给出的解决方案.`[链接](http://mp.weixin.qq.com/wiki/7/aaa137b55fb2e0456bf8dd9148dd613f.html)
+&nbsp;&nbsp;&nbsp;&nbsp;`建议：首先查看微信官方网站给出的解决方案.`[链接](http://mp.weixin.qq.com/wiki/7/aaa137b55fb2e0456bf8dd9148dd613f.html) [获取access_token](https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=wxf17b04f12b73b60c&secret=345d810799934a7736f60f95ddbbf84b)
 &nbsp;&nbsp;&nbsp;&nbsp;建议按如下顺序查找错误：
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.确认签名算法正确，可用 http://mp.weixin.qq.com/debug/cgi-bin/sandbox?t=jsapisign 页面工具进行校验。也就是你自己后台生成签名要和微信校验算法生成的签名一致才可以（可能大小写不同）。
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.确认config中nonceStr（js中驼峰标准大写S）, timestamp与用以签名中的对应noncestr, timestamp一致。

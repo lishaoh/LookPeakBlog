@@ -132,7 +132,7 @@ theme: anisina
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: git@github.com:Andrew-project/LookPeakBlog.git
+  repo: https://github.com/Andrew-project/LookPeakBlog.git
   branch: master
 
 

@@ -132,7 +132,7 @@ theme: anisina
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: https://git.coding.net/ShaoHuaLi/ShaoHuaLi.coding.me.git
+  repo: git@github.com:Andrew-project/LookPeakBlog.git
   branch: master
 
 

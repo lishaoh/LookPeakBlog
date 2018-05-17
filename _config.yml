@@ -3,15 +3,15 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Andrew # your blog title name
+title: lishaoh # your blog title name
 subtitle:
-author: Andrew # 作者
+author: lishaoh # 作者
 language:
 timezone:
 
 # custom Site settings
 # more detail check out docs
-SEOTitle: Andrew's blog
+SEOTitle: lishaoh's blog
 header-img: images/home.jpg
 email: lsh94753@gmail.com
 description: "李少华在 Github 上的个人博客"

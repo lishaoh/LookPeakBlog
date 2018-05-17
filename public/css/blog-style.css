@@ -66,6 +66,7 @@ body {
     color: #404040;
     overflow-x: hidden;
     font-family: -apple-system,  "PingFang SC","Helvetica Neue", "Hiragino Sans GB", "Microsoft YaHei", "Microsoft JhengHei", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "WenQuanYi Micro Hei", SimSun, sans-serif;
+    -webkit-font-smoothing: antialiased
 }
 
 p {
@@ -1212,7 +1213,7 @@ img::-moz-selection {
     width:0;
 }
 
-p {
+.post-meta {
     font-style: italic;
     font-family: sans-serif;
 }

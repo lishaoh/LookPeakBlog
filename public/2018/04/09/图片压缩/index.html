@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="李少华在 Github 上的个人博客">
+    <meta name="keyword" content="">
+    <meta name="theme-color" content="#600090">
+    <meta name="msapplication-navbutton-color" content="#600090">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#600090">
+    <link rel="shortcut icon" href="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-person-128.png">
+    <link rel="alternate" type="application/atom+xml" title="Andrew" href="/atom.xml">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
+    <title>
+        
+        Canvas实现图片压缩上传｜Andrew&#39;s blog
+        
+    </title>
+
+    <link rel="canonical" href="http://ShaoHuaLi.coding.me/2018/04/09/图片压缩/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/blog-style.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+</head>
+
+<style>
+
+    header.intro-header {
+        background-image: url('images/home.jpg')
+    }
+</style>
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="" class="animated fadeIn">
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost = "true" data-istags="false
+" data-ishome = "false" >
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand animated pulse" href="/">
+                <span class="brand-logo">
+                    Andrew
+                </span>
+                's Blog
+            </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <!-- /.navbar-collapse -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+					
+                    
+					
+					
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+//    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+<!-- Main Content -->
+
+<!--only post-->
+
+
+<img class="wechat-title-img"
+     src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1523271490186&di=32a5c4bc5275d71ad5ca11ea4b8899eb&imgtype=0&src=http%3A%2F%2Fwww.jituwang.com%2Fuploads%2Fallimg%2F150830%2F258381-150S011133046.jpg">
+
+
+<style>
+    
+    header.intro-header {
+        background-image: url('https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1523271490186&di=32a5c4bc5275d71ad5ca11ea4b8899eb&imgtype=0&src=http%3A%2F%2Fwww.jituwang.com%2Fuploads%2Fallimg%2F150830%2F258381-150S011133046.jpg')
+    }
+
+    
+</style>
+
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <div class="post-heading">
+                    <h1>Canvas实现图片压缩上传</h1>
+                    
+                    <span class="meta">
+                         作者 Andrew
+                        <span>
+                          日期 2018-04-09
+                         </span>
+                    </span>
+                    <div class="tags text-center">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="post-title-haojen">
+        <span>
+            Canvas实现图片压缩上传
+        </span>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <!-- Post Container -->
+            <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
+                <p>接到产品需求，问能不能将前端上传的图片压缩？像移动端上传图片，一般都是超清、高清图片，大小也有10M，甚至一张图片大小有15M左右，这样大的图片上传到腾讯云或者阿里云（没使用服务器上传图片）一方面上传速度慢，影响体验，另一方面体积太大占空间，图片压缩避免了，网上搜到了很多这方面介绍的<a href="https://www.cnblogs.com/stoneniqiu/p/5957356.html" target="_blank" rel="noopener">网址</a>，大多数都是用canvas来实现（不说了，马上开干）！。</p>
+<h2 id="实现过程-10M-gt-200k左右"><a href="#实现过程-10M-gt-200k左右" class="headerlink" title="实现过程 (10M =&gt; 200k左右)"></a>实现过程 (10M =&gt; 200k左右)</h2><h3 id="1-图片裁剪"><a href="#1-图片裁剪" class="headerlink" title="1. 图片裁剪"></a>1. 图片裁剪</h3><p>大体的思路是将图片抽样显示在canvas上，然后用通过<code>canvas.toDataURL</code>方法得到base64字符串来实现压缩。上代码！！！<br><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> file: &#123;&#125; = e.target.files[<span class="number">0</span>]; <span class="comment">// 通过input元素触发的change事件</span></span><br><span class="line"><span class="keyword">const</span> reader = <span class="keyword">new</span> FileReader(),</span><br><span class="line">img = <span class="keyword">new</span> Image();</span><br><span class="line"><span class="comment">// 缩放图片需要的canvas</span></span><br><span class="line"><span class="keyword">const</span> canvas = <span class="built_in">document</span>.createElement(<span class="string">'canvas'</span>);</span><br><span class="line"><span class="keyword">const</span> context = canvas.getContext(<span class="string">'2d'</span>);</span><br><span class="line">reader.readAsDataURL(file);</span><br><span class="line"><span class="comment">// base64地址图片加载完毕后</span></span><br><span class="line">img.onload = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 图片原始尺寸</span></span><br><span class="line">  <span class="keyword">const</span> originWidth = <span class="keyword">this</span>[<span class="string">'width'</span>];</span><br><span class="line">  <span class="keyword">const</span> originHeight = <span class="keyword">this</span>[<span class="string">'height'</span>];</span><br><span class="line">  <span class="comment">// 最大尺寸限制</span></span><br><span class="line">  <span class="keyword">const</span> maxWidth = <span class="number">750</span>, maxHeight = <span class="number">400</span>;</span><br><span class="line">  <span class="comment">// 目标尺寸</span></span><br><span class="line">  <span class="keyword">let</span> targetWidth = originWidth, targetHeight = originHeight;</span><br><span class="line">  <span class="comment">// 图片尺寸超过750x400的限制</span></span><br><span class="line">  <span class="keyword">if</span> (originWidth &gt; maxWidth || originHeight &gt; maxHeight) &#123;</span><br><span class="line">    <span class="keyword">if</span> (originWidth / originHeight &gt; maxWidth / maxHeight) &#123;</span><br><span class="line">      <span class="comment">// 更宽，按照宽度限定尺寸</span></span><br><span class="line">      targetWidth = maxWidth;</span><br><span class="line">      targetHeight = <span class="built_in">Math</span>.round(maxWidth * (originHeight / originWidth));</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      targetHeight = maxHeight;</span><br><span class="line">      targetWidth = <span class="built_in">Math</span>.round(maxHeight * (originWidth / originHeight));</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// canvas对图片进行缩放</span></span><br><span class="line">  canvas.width = targetWidth;</span><br><span class="line">  canvas.height = targetHeight;</span><br><span class="line">  <span class="comment">// 清除画布</span></span><br><span class="line">  context.clearRect(<span class="number">0</span>, <span class="number">0</span>, targetWidth, targetHeight);</span><br><span class="line">  <span class="comment">// 图片压缩</span></span><br><span class="line">  context.drawImage(img, <span class="number">0</span>, <span class="number">0</span>, targetWidth, targetHeight);</span><br><span class="line">  <span class="comment">// canvas转为blob并上传</span></span><br><span class="line">  <span class="comment">// * 很多PC、手机浏览器不支持toBlob方法，如Safari*</span></span><br><span class="line">  <span class="comment">// 不推荐使用toBlob方法</span></span><br><span class="line">  <span class="comment">// canvas.toBlob(function($Blob) &#123;</span></span><br><span class="line">  <span class="comment">// &#125;)</span></span><br><span class="line">  <span class="keyword">const</span> dataUrl = canvas.toDataURL(<span class="string">'image/jpeg'</span>);</span><br><span class="line">  updateImgForBase64(dataUrl);</span><br><span class="line">&#125;</span><br><span class="line">reader.onload = <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">    img.src = e.target[<span class="string">'result'</span>];</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<h3 id="2-上传到腾讯云"><a href="#2-上传到腾讯云" class="headerlink" title="2. 上传到腾讯云"></a>2. 上传到腾讯云</h3><p>项目中图片是保存在腾讯云中，这里就需要用到<a href="https://cloud.tencent.com/document/product/436/11459" target="_blank" rel="noopener">腾讯JavaScript SDK</a>，按照SDK文档去新建存储桶获取Bucket、Region，直接上代码：<br><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">updateImgForBase64(img: string, <span class="attr">type</span>: string = <span class="string">'jpeg'</span>): <span class="built_in">Promise</span>&lt;any&gt; &#123;</span><br><span class="line">    <span class="keyword">const</span> vm = <span class="keyword">this</span>;</span><br><span class="line">    <span class="keyword">const</span> storeAs = <span class="string">`avatar/<span class="subst">$&#123;<span class="keyword">new</span> <span class="built_in">Date</span>().getTime()&#125;</span>-<span class="subst">$&#123;<span class="keyword">this</span>.guid()&#125;</span>.<span class="subst">$&#123;type&#125;</span>`</span>;</span><br><span class="line">    <span class="keyword">const</span> dataURLtoFile: <span class="built_in">Function</span> = <span class="function">(<span class="params">dataurl, filename</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">const</span> arr = dataurl.split(<span class="string">','</span>), mime = arr[<span class="number">0</span>].match(<span class="regexp">/:(.*?);/</span>)[<span class="number">1</span>];</span><br><span class="line">      <span class="keyword">const</span> bstr = atob(arr[<span class="number">1</span>]);</span><br><span class="line">      <span class="keyword">let</span> n = bstr.length;</span><br><span class="line">      <span class="keyword">const</span> u8arr = <span class="keyword">new</span> <span class="built_in">Uint8Array</span>(n);</span><br><span class="line">      <span class="keyword">while</span> (n--) &#123;</span><br><span class="line">        u8arr[n] = bstr.charCodeAt(n);</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">new</span> File([u8arr], filename, &#123;<span class="attr">type</span>: mime&#125;);</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">const</span> file = dataURLtoFile(img, type);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// function getBlobBydataURI(dataURI, type) &#123;</span></span><br><span class="line">    <span class="comment">//   var binary = atob(dataURI.split(',')[1]);</span></span><br><span class="line">    <span class="comment">//   var array = [];</span></span><br><span class="line">    <span class="comment">//   for (var i = 0; i &lt; binary.length; i++) &#123;</span></span><br><span class="line">    <span class="comment">//     array.push(binary.charCodeAt(i));</span></span><br><span class="line">    <span class="comment">//   &#125;</span></span><br><span class="line">    <span class="comment">//   return new Blob([new Uint8Array(array)], &#123;type: type&#125;);</span></span><br><span class="line">    <span class="comment">// &#125;</span></span><br><span class="line">    <span class="comment">//</span></span><br><span class="line">    <span class="comment">// /**</span></span><br><span class="line">    <span class="comment">//  * 上传  formData.append("files", $Blob, storeAs);对iOS系统不支持</span></span><br><span class="line">    <span class="comment">//  */</span></span><br><span class="line">    <span class="comment">//   //base64 转 blob</span></span><br><span class="line">    <span class="comment">// let $Blob = getBlobBydataURI(img, 'image/jpeg');</span></span><br><span class="line">    <span class="comment">// let formData = new FormData();</span></span><br><span class="line">    <span class="comment">// let storeAs = `documents/$&#123;new Date().getTime()&#125;-$&#123;this.guid()&#125;.$&#123;type&#125;`;</span></span><br><span class="line">    <span class="comment">// formData.append("files", $Blob, storeAs);</span></span><br><span class="line">    <span class="comment">//组建XMLHttpRequest 上传文件</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">this</span>.cos.sliceUploadFile(&#123;</span><br><span class="line">        Bucket: <span class="string">'your bucket'</span>,</span><br><span class="line">        Region: <span class="string">'your region'</span>,</span><br><span class="line">        Key: storeAs,</span><br><span class="line">        Body: file</span><br><span class="line">      &#125;, <span class="function"><span class="keyword">function</span> (<span class="params">err, data</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (err) &#123;</span><br><span class="line">          reject(<span class="built_in">JSON</span>.stringify(err));</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">          resolve(url);</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></p>
+
+                <hr>
+                
+
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2018/04/19/wx_sdk/" data-toggle="tooltip" data-placement="top"
+                           title="微信JSSDK遇到的那些坑">&larr; Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/2018/04/09/ngrok/" data-toggle="tooltip" data-placement="top"
+                           title="微信公众号本地调试小技巧">Next Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+                
+
+                
+
+
+                <!--加入新的评论系统-->
+                
+            </div>
+
+            <div class="hidden-xs col-sm-3 toc-col">
+                <div class="toc-wrap">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#实现过程-10M-gt-200k左右"><span class="toc-text">实现过程 (10M =&gt; 200k左右)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-图片裁剪"><span class="toc-text">1. 图片裁剪</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-上传到腾讯云"><span class="toc-text">2. 上传到腾讯云</span></a></li></ol></li></ol>
+                </div>
+            </div>
+        </div>
+
+        <!--<div class="row">-->
+            <!--&lt;!&ndash; Sidebar Container &ndash;&gt;-->
+
+            <!--<div class="-->
+                <!--col-lg-8 col-lg-offset-2-->
+                <!--col-md-10 col-md-offset-1-->
+                <!--sidebar-container">-->
+
+                <!--&lt;!&ndash; Featured Tags &ndash;&gt;-->
+                <!---->
+                <!--<section>-->
+                    <!--&lt;!&ndash; no hr &ndash;&gt;-->
+                    <!--<h5 class="text-center">-->
+                        <!--<a href="/tags/">FEATURED TAGS</a>-->
+                    <!--</h5>-->
+                    <!--<div class="tags">-->
+                        <!---->
+                    <!--</div>-->
+                <!--</section>-->
+                <!---->
+
+                <!--&lt;!&ndash; Friends Blog &ndash;&gt;-->
+                <!---->
+            <!--</div>-->
+        <!--</div>-->
+
+    </div>
+</article>
+
+
+
+
+
+
+
+<!-- Footer -->
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <br>
+                <ul class="list-inline text-center">
+                
+                
+                
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/lishaoh">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank" href="http://weibo.com/5831478442/profile">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/lishaoh">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; Andrew 2018
+                    <br>
+                    <span id="busuanzi_container_site_pv" style="font-size: 12px;">PV: <span id="busuanzi_value_site_pv"></span> Times</span>
+                    <!--<br>-->
+                    <!--Theme by <a href="https://haojen.github.io/">ShaoHua Li</a>-->
+                </p>
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/blog.js"></script>
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("http://ShaoHuaLi.coding.me/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+<!-- Google Analytics -->
+
+
+
+<!-- Baidu Tongji -->
+
+
+<!-- swiftype -->
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install','','2.0.0');
+</script>
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<!--wechat title img-->
+<img class="wechat-title-img" src="images/avatar.jpeg">
+</body>
+
+</html>

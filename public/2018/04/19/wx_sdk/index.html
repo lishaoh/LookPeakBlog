@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="李少华在 Github 上的个人博客">
+    <meta name="keyword" content="">
+    <meta name="theme-color" content="#600090">
+    <meta name="msapplication-navbutton-color" content="#600090">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#600090">
+    <link rel="shortcut icon" href="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-person-128.png">
+    <link rel="alternate" type="application/atom+xml" title="Andrew" href="/atom.xml">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
+    <title>
+        
+        微信JSSDK遇到的那些坑｜Andrew&#39;s blog
+        
+    </title>
+
+    <link rel="canonical" href="http://ShaoHuaLi.coding.me/2018/04/19/wx_sdk/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/blog-style.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+</head>
+
+<style>
+
+    header.intro-header {
+        background-image: url('images/home.jpg')
+    }
+</style>
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="" class="animated fadeIn">
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost = "true" data-istags="false
+" data-ishome = "false" >
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand animated pulse" href="/">
+                <span class="brand-logo">
+                    Andrew
+                </span>
+                's Blog
+            </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <!-- /.navbar-collapse -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+					
+                    
+					
+					
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+//    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+<!-- Main Content -->
+
+<!--only post-->
+
+
+<img class="wechat-title-img"
+     src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1523271490186&di=32a5c4bc5275d71ad5ca11ea4b8899eb&imgtype=0&src=http%3A%2F%2Fwww.jituwang.com%2Fuploads%2Fallimg%2F150830%2F258381-150S011133046.jpg">
+
+
+<style>
+    
+    header.intro-header {
+        background-image: url('https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1523271490186&di=32a5c4bc5275d71ad5ca11ea4b8899eb&imgtype=0&src=http%3A%2F%2Fwww.jituwang.com%2Fuploads%2Fallimg%2F150830%2F258381-150S011133046.jpg')
+    }
+
+    
+</style>
+
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <div class="post-heading">
+                    <h1>微信JSSDK遇到的那些坑</h1>
+                    
+                    <span class="meta">
+                         作者 Andrew
+                        <span>
+                          日期 2018-04-19
+                         </span>
+                    </span>
+                    <div class="tags text-center">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="post-title-haojen">
+        <span>
+            微信JSSDK遇到的那些坑
+        </span>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <!-- Post Container -->
+            <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
+                <p>作为一个前端开发者，相信很多同道中人在微信公众号的开发中被坑的很惨，我也分享开发过程中的一点点经验给大家，可以减少很多弯路。由于项目需要，前端开发使用的是angular4.0技术，微信开发工具v1.02。前端开发公众号最坑的就是微信JSSDK的使用，前面坑路漫漫，我还得一步一步趟过去。</p>
+<h2 id="JSSDK使用报错"><a href="#JSSDK使用报错" class="headerlink" title="JSSDK使用报错"></a>JSSDK使用报错</h2><h3 id="1-config-invalid-signature一直报这个错误"><a href="#1-config-invalid-signature一直报这个错误" class="headerlink" title="1. config:invalid signature一直报这个错误"></a>1. config:invalid signature一直报这个错误</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;<code>建议：首先查看微信官方网站给出的解决方案.</code><a href="http://mp.weixin.qq.com/wiki/7/aaa137b55fb2e0456bf8dd9148dd613f.html" target="_blank" rel="noopener">链接</a> <a href="https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&amp;appid=wxf17b04f12b73b60c&amp;secret=345d810799934a7736f60f95ddbbf84b" target="_blank" rel="noopener">获取access_token</a><br>&nbsp;&nbsp;&nbsp;&nbsp;建议按如下顺序查找错误：<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.确认签名算法正确，可用 <a href="http://mp.weixin.qq.com/debug/cgi-bin/sandbox?t=jsapisign" target="_blank" rel="noopener">http://mp.weixin.qq.com/debug/cgi-bin/sandbox?t=jsapisign</a> 页面工具进行校验。也就是你自己后台生成签名要和微信校验算法生成的签名一致才可以（可能大小写不同）。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.确认config中nonceStr（js中驼峰标准大写S）, timestamp与用以签名中的对应noncestr, timestamp一致。<br>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.确认url是页面完整的url(请在当前页面alert(location.href.split(‘#’)[0])确认)，包括’http(s)://‘部分，以及’？’后面的GET参数部分,但不包括’#’hash后面的部分。<br>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.确认 config 中的 appid 与用来获取 jsapi_ticket 的 appid 一致。<br>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.确保一定缓存access_token和jsapi_ticket。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.出现问题的原因是参与签名的URL地址不正确，需要动态获取当前页面完整的URL地址（包括?后面的参数，但不能包含#号），如若URL地址为：<code>http://www.xxx.xxx/payment/wxpay/jspay?oid=xxxx&amp;attr=xxxx#wechat</code>，那么完整的URL地址应该是截取#号之前的部份。为什么会出现#号呢？因为你的URL在被分享到朋友圈等微信系统自动会添加一些参数。<br>&nbsp;&nbsp;&nbsp;&nbsp;PS：这里有一个大坑，就是Android和iOS对于当前页面的URL有不同的理解，iOS微信JSSDK授权易出错，但是筛选页面后又OK了，Android每次授权是OK的，具体介绍<a href="https://gitissue.com/issues/5ab609afefbdd46ca4725b98" target="_blank" rel="noopener">看这里</a>。原因就是因为iOS和Android对URL的识别机制不同：Android每次进行新页面时当前URL也是最新的，而iOS每次进去新页面时实际URL是第一次进入应用的URL，刷新之后当前页面URL就是最新URL。<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">解决办法： 在home页判断当前平台是否为iOS，若为iOS，此时通过wx.config()授权，获取直接通过window.location.href链接跳转来改变当前页面URL</span><br></pre></td></tr></table></figure></p>
+<h3 id="2-permission-denied权限错误"><a href="#2-permission-denied权限错误" class="headerlink" title="2. permission denied权限错误"></a>2. permission denied权限错误</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;首先查看微信给出的错误说明：该公众号没有权限使用这个JSAPI（部分接口需要认证之后才能使)。<br>&nbsp;&nbsp;&nbsp;&nbsp;说明：只要通过了公众号认证，都不会有问题。<br>&nbsp;&nbsp;&nbsp;&nbsp;检查对象：如果出现这个说明程序上基本上不会有问题 微信后台已经返回了数据。<br>&nbsp;&nbsp;&nbsp;&nbsp;第一、要检查 你的config 文件中相应的 jsApiList数组中是否包含了该接口。<br><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">wx.config(&#123;</span><br><span class="line">    debug: <span class="literal">false</span>,</span><br><span class="line">    appId: <span class="string">''</span>,</span><br><span class="line">	timestamp:<span class="string">''</span>,</span><br><span class="line">	nonceStr:<span class="string">''</span>,</span><br><span class="line">	signature:<span class="string">''</span>,</span><br><span class="line">	jsApiList: [</span><br><span class="line">	    <span class="string">'checkJsApi'</span>,</span><br><span class="line">	    <span class="string">'onMenuShareTimeline'</span>,</span><br><span class="line">	    <span class="string">'hideOptionMenu'</span></span><br><span class="line">	    ...</span><br><span class="line">	]</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+
+                <hr>
+                
+
+                <ul class="pager">
+                    
+                    
+                    <li class="next">
+                        <a href="/2018/04/09/图片压缩/" data-toggle="tooltip" data-placement="top"
+                           title="Canvas实现图片压缩上传">Next Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+                
+
+                
+
+
+                <!--加入新的评论系统-->
+                
+            </div>
+
+            <div class="hidden-xs col-sm-3 toc-col">
+                <div class="toc-wrap">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#JSSDK使用报错"><span class="toc-text">JSSDK使用报错</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-config-invalid-signature一直报这个错误"><span class="toc-text">1. config:invalid signature一直报这个错误</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-permission-denied权限错误"><span class="toc-text">2. permission denied权限错误</span></a></li></ol></li></ol>
+                </div>
+            </div>
+        </div>
+
+        <!--<div class="row">-->
+            <!--&lt;!&ndash; Sidebar Container &ndash;&gt;-->
+
+            <!--<div class="-->
+                <!--col-lg-8 col-lg-offset-2-->
+                <!--col-md-10 col-md-offset-1-->
+                <!--sidebar-container">-->
+
+                <!--&lt;!&ndash; Featured Tags &ndash;&gt;-->
+                <!---->
+                <!--<section>-->
+                    <!--&lt;!&ndash; no hr &ndash;&gt;-->
+                    <!--<h5 class="text-center">-->
+                        <!--<a href="/tags/">FEATURED TAGS</a>-->
+                    <!--</h5>-->
+                    <!--<div class="tags">-->
+                        <!---->
+                    <!--</div>-->
+                <!--</section>-->
+                <!---->
+
+                <!--&lt;!&ndash; Friends Blog &ndash;&gt;-->
+                <!---->
+            <!--</div>-->
+        <!--</div>-->
+
+    </div>
+</article>
+
+
+
+
+
+
+
+<!-- Footer -->
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <br>
+                <ul class="list-inline text-center">
+                
+                
+                
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/lishaoh">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank" href="http://weibo.com/5831478442/profile">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/lishaoh">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; Andrew 2018
+                    <br>
+                    <span id="busuanzi_container_site_pv" style="font-size: 12px;">PV: <span id="busuanzi_value_site_pv"></span> Times</span>
+                    <!--<br>-->
+                    <!--Theme by <a href="https://haojen.github.io/">ShaoHua Li</a>-->
+                </p>
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/blog.js"></script>
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("http://ShaoHuaLi.coding.me/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+<!-- Google Analytics -->
+
+
+
+<!-- Baidu Tongji -->
+
+
+<!-- swiftype -->
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install','','2.0.0');
+</script>
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<!--wechat title img-->
+<img class="wechat-title-img" src="images/avatar.jpeg">
+</body>
+
+</html>

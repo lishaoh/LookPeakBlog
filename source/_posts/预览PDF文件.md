@@ -98,4 +98,4 @@ PDF.js可在官网下载  地址：http://mozilla.github.io/pdf.js/
 ```
 
 结果如下图:
-![](../images/pdf.jpg)
+![](/images/pdf.jpg)

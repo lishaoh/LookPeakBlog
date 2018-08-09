@@ -1,364 +1,572 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<!-- Head tag -->
+<html lang=zh>
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="李少华在 Github 上的个人博客">
-    <meta name="keyword" content="">
-    <meta name="theme-color" content="#600090">
-    <meta name="msapplication-navbutton-color" content="#600090">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="#600090">
-    <link rel="shortcut icon" href="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-person-128.png">
-    <link rel="alternate" type="application/atom+xml" title="lishaoh" href="/atom.xml">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
-    <title>
-        
-        微信公众号本地调试小技巧｜lishaoh&#39;s blog
-        
-    </title>
+  <meta charset="utf-8">
+  <meta name=referrer content=never>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>微信公众号本地调试小技巧 | Hexo</title>
+  <meta name="description" content="本地调试是公众号开发过程中不可缺少的步骤，我们不可能每次开发都上传到服务器再用微信去查看本地效果，这样一方面效率低，另一方面存在一定的风险性。那么有没有什么办法能够让开发者本地调试代码呢，答案是有的，网上搜出了很多方法，比如ngrok、花生壳、natapp.cn等工具，下面介绍的是ngrok，其他的嫌麻烦。 ngrok使用1. 为什么要用ngrok&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;在">
+<meta property="og:type" content="article">
+<meta property="og:title" content="微信公众号本地调试小技巧">
+<meta property="og:url" content="www.lookpeakfans.xyz/2018/04/09/ngrok/index.html">
+<meta property="og:site_name" content="lishaoh">
+<meta property="og:description" content="本地调试是公众号开发过程中不可缺少的步骤，我们不可能每次开发都上传到服务器再用微信去查看本地效果，这样一方面效率低，另一方面存在一定的风险性。那么有没有什么办法能够让开发者本地调试代码呢，答案是有的，网上搜出了很多方法，比如ngrok、花生壳、natapp.cn等工具，下面介绍的是ngrok，其他的嫌麻烦。 ngrok使用1. 为什么要用ngrok&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;在">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="/images/ngrok1.png">
+<meta property="og:image" content="/images/ngrok2.png">
+<meta property="og:image" content="/images/ngrok3.jpg">
+<meta property="og:updated_time" content="2018-04-09T09:09:17.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="微信公众号本地调试小技巧">
+<meta name="twitter:description" content="本地调试是公众号开发过程中不可缺少的步骤，我们不可能每次开发都上传到服务器再用微信去查看本地效果，这样一方面效率低，另一方面存在一定的风险性。那么有没有什么办法能够让开发者本地调试代码呢，答案是有的，网上搜出了很多方法，比如ngrok、花生壳、natapp.cn等工具，下面介绍的是ngrok，其他的嫌麻烦。 ngrok使用1. 为什么要用ngrok&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;在">
+<meta name="twitter:image" content="/images/ngrok1.png">
+  <!-- Canonical links -->
+  <link rel="canonical" href="www.lookpeakfans.xyz/2018/04/09/ngrok/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="lishaoh" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  <!-- font-awesome CSS -->
+  <!-- <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> -->
+  <link rel="stylesheet" href="/css/style.css">
+  
+    
+    
 
-    <link rel="canonical" href="http://ShaoHuaLi.coding.me/2018/04/09/ngrok/">
-
-    <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/blog-style.css">
-
-    <!-- Pygments Github CSS -->
-    <link rel="stylesheet" href="/css/syntax.css">
 </head>
 
-<style>
 
-    header.intro-header {
-        background-image: url('images/home.jpg')
-    }
-</style>
-<!-- hack iOS CSS :active style -->
-<body ontouchstart="" class="animated fadeIn">
-<!-- Navigation -->
-<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost = "true" data-istags="false
-" data-ishome = "false" >
-    <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header page-scroll">
-            <button type="button" class="navbar-toggle">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand animated pulse" href="/">
-                <span class="brand-logo">
-                    lishaoh
-                </span>
-                's Blog
-            </a>
+<body class="main-center theme-black" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/lishaoh" target="_blank">
+          <img class="img-circle img-rotate" src="/images/avatar.jpeg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">lishaoh</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">Web Developer</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> Beijing, China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
         </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <!-- Known Issue, found by Hux:
-            <nav>'s height woule be hold on by its content.
-            so, when navbar scale out, the <nav> will cover tags.
-            also mask any touch event of tags, unfortunately.
-        -->
-        <!-- /.navbar-collapse -->
-        <div id="huxblog_navbar">
-            <div class="navbar-collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="/">Home</a>
-                    </li>
-					
-                    
-					
-					
-                </ul>
-            </div>
-        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
     </div>
-    <!-- /.container -->
-</nav>
-<script>
-    // Drop Bootstarp low-performance Navbar
-    // Use customize navbar with high-quality material design animation
-    // in high-perf jank-free CSS3 implementation
-//    var $body   = document.body;
-    var $toggle = document.querySelector('.navbar-toggle');
-    var $navbar = document.querySelector('#huxblog_navbar');
-    var $collapse = document.querySelector('.navbar-collapse');
-
-    $toggle.addEventListener('click', handleMagic)
-    function handleMagic(e){
-        if ($navbar.className.indexOf('in') > 0) {
-        // CLOSE
-            $navbar.className = " ";
-            // wait until animation end.
-            setTimeout(function(){
-                // prevent frequently toggle
-                if($navbar.className.indexOf('in') < 0) {
-                    $collapse.style.height = "0px"
-                }
-            },400)
-        }else{
-        // OPEN
-            $collapse.style.height = "auto"
-            $navbar.className += " in";
-        }
-    }
-</script>
-
-<!-- Main Content -->
-
-<!--only post-->
-
-
-<img class="wechat-title-img"
-     src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1523271490186&di=32a5c4bc5275d71ad5ca11ea4b8899eb&imgtype=0&src=http%3A%2F%2Fwww.jituwang.com%2Fuploads%2Fallimg%2F150830%2F258381-150S011133046.jpg">
-
-
-<style>
-    
-    header.intro-header {
-        background-image: url('https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1523271490186&di=32a5c4bc5275d71ad5ca11ea4b8899eb&imgtype=0&src=http%3A%2F%2Fwww.jituwang.com%2Fuploads%2Fallimg%2F150830%2F258381-150S011133046.jpg')
-    }
-
-    
-</style>
-
-<header class="intro-header">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
-                <div class="post-heading">
-                    <h1>微信公众号本地调试小技巧</h1>
-                    
-                    <span class="meta">
-                         作者 lishaoh
-                        <span>
-                          日期 2018-04-09
-                         </span>
-                    </span>
-                    <div class="tags text-center">
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
     </div>
-    <div class="post-title-haojen">
-        <span>
-            微信公众号本地调试小技巧
-        </span>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
     </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">分类</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">项目</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-books">
+          <a href="/books">
+            
+            <i class="icon icon-book-fill"></i>
+            
+            <span class="menu-title">书单</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links">
+            
+            <i class="icon icon-friendship"></i>
+            
+            <span class="menu-title">友链</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">关于</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/lishaoh" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="http://weibo.com/5831478442/profile" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
 </header>
 
-<!-- Post Content -->
-<article>
-    <div class="container">
-        <div class="row">
-            <!-- Post Container -->
-            <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
-                <p>本地调试是公众号开发过程中不可缺少的步骤，我们不可能每次开发都上传到服务器再用微信去查看本地效果，这样一方面效率低，另一方面存在一定的风险性。那么有没有什么办法能够让开发者本地调试代码呢，答案是有的，网上搜出了很多方法，比如ngrok、花生壳、natapp.cn等工具，下面介绍的是<a href="https://ngrok.com/" target="_blank" rel="noopener">ngrok</a>，其他的嫌麻烦。</p>
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>欢迎交流与分享经验!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+
+    
+      
+
+    
+      
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a><span class="archive-list-count">3</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2018/07/19/与小程序间的相爱相杀/" class="title">(no title)</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-07-19T03:05:12.000Z" itemprop="datePublished">2018-07-19</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2018/05/18/预览PDF文件/" class="title">PDF.js预览文件</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-05-18T10:35:07.000Z" itemprop="datePublished">2018-05-18</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2018/05/17/CSS实现文字滚动，类似公告展示/" class="title">CSS实现文字滚动，类型京东商城公告栏</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-05-17T11:44:26.000Z" itemprop="datePublished">2018-05-17</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2018/05/17/前端预览文件/" class="title">前端实现在线预览pdf、word、xls、ppt等文件</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-05-17T08:33:37.000Z" itemprop="datePublished">2018-05-17</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2018/04/19/wx_sdk/" class="title">微信JSSDK遇到的那些坑</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-04-19T09:53:52.000Z" itemprop="datePublished">2018-04-19</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-ngrok" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      微信公众号本地调试小技巧
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2018/04/09/ngrok/" class="article-date">
+	  <time datetime="2018-04-09T09:09:17.000Z" itemprop="datePublished">2018-04-09</time>
+	</a>
+</span>
+        
+        
+
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2018/04/09/ngrok/#comments" class="article-comment-link">评论</a></span>
+        
+      </div>
+    </div>
+    <div class="article-entry markdown-body" itemprop="articleBody">
+      
+        <p>本地调试是公众号开发过程中不可缺少的步骤，我们不可能每次开发都上传到服务器再用微信去查看本地效果，这样一方面效率低，另一方面存在一定的风险性。那么有没有什么办法能够让开发者本地调试代码呢，答案是有的，网上搜出了很多方法，比如ngrok、花生壳、natapp.cn等工具，下面介绍的是<a href="https://ngrok.com/" target="_blank" rel="noopener">ngrok</a>，其他的嫌麻烦。</p>
 <h2 id="ngrok使用"><a href="#ngrok使用" class="headerlink" title="ngrok使用"></a>ngrok使用</h2><h3 id="1-为什么要用ngrok"><a href="#1-为什么要用ngrok" class="headerlink" title="1. 为什么要用ngrok"></a>1. 为什么要用ngrok</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;在微信开发的时候需要填写与微信服务器相连接的url才能授权，这个url必须是外网域名，也就是说我们需要在这个外网域名对应的ip服务器上做开发，而没办法本地开发调试所以用ngrok获得一个外网域名 这个外网域名实际访问的是本地主机这样把此外网域名填入到微信需要的外网url里就可以在本地开发调试了。</p>
 <h3 id="2-使用ngrok"><a href="#2-使用ngrok" class="headerlink" title="2.使用ngrok"></a>2.使用ngrok</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;首先到官网下载<a href="https://ngrok.com/" target="_blank" rel="noopener">ngrok</a>，然后注册一个ngrok帐号拿到token，这个token自定义域名的时候使用，<a href="https://dashboard.ngrok.com/get-started" target="_blank" rel="noopener">具体看这里</a>。我本人使用的MAC，需到ngrok目录下执行命令<br><img src="/images/ngrok1.png" alt=""><br>这时候ngrok已经生成了一个外网域名<code>http://4f75fc79.ngrok.io</code>访问本机<code>localhost:80</code><br><img src="/images/ngrok2.png" alt=""><br>浏览器里直接访问<code>http://4f75fc79.ngrok.io</code>就可以访问本地。<br>现在外网有了，就可以开始授权了。为了避免和线上冲突，我注册了一个微信公众号开发者测试号，已经能够调用微信开放的大多数JS接口了。创建公众号测试帐号方法可以自行百度.<br><img src="/images/ngrok3.jpg" alt=""><br>此处有一个坑，网上很多都说这里的token是随便写的，的确，但是作为一个前端开发者，在没有后端资源情况下随便填写的token总是报token无效错误，这是因为保存修改时微信会向填写的URL发送一个验证请求，验证token是否有效，但是我们不知道token是多少，现在如何做呢？我有node.js爸爸，还怕什么呢，我们可以本地起一个服务来监听微信请求的URL，上面说到微信此时会发起一个get请求到<br><code>http://4f75fc79.ngrok.io</code>那我就本地写一个服务来监听，只要服务里的token和修改的一致不就可以匹配了吗？说干就干，直接上代码<br><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> PORT=<span class="number">80</span>;                 <span class="comment">//监听80端口号</span></span><br><span class="line"><span class="keyword">var</span> http=<span class="built_in">require</span>(<span class="string">'http'</span>);  </span><br><span class="line"><span class="keyword">var</span> qs=<span class="built_in">require</span>(<span class="string">'qs'</span>);</span><br><span class="line"><span class="keyword">var</span> TOKEN=<span class="string">'token'</span>;           <span class="comment">//必须与测试号所填写的Token相同</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">checkSignature</span>(<span class="params">params,token</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> key=[token,params.timestamp,params.nonce].sort().join(<span class="string">''</span>); </span><br><span class="line">     <span class="comment">//将token （自己设置的） 、timestamp（时间戳）、nonce（随机数）三个参数进行字典排序</span></span><br><span class="line">    <span class="keyword">var</span> sha1=<span class="built_in">require</span>(<span class="string">'crypto'</span>).createHash(<span class="string">'sha1'</span>);</span><br><span class="line">     <span class="comment">//将上面三个字符串拼接成一个字符串再进行sha1加密</span></span><br><span class="line">    sha1.update(key);</span><br><span class="line">    <span class="keyword">return</span> sha1.digest(<span class="string">'hex'</span>) ==params.signature;</span><br><span class="line">     <span class="comment">//将加密后的字符串与signature进行对比，若成功，返回echostr</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> server=http.createServer(<span class="function"><span class="keyword">function</span> (<span class="params">request,response</span>) </span>&#123;</span><br><span class="line">   <span class="keyword">var</span> query=<span class="built_in">require</span>(<span class="string">'url'</span>).parse(request.url).query;</span><br><span class="line">    <span class="keyword">var</span> params=qs.parse(query);</span><br><span class="line"></span><br><span class="line">    <span class="built_in">console</span>.log(params);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"token :"</span>,TOKEN);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(!checkSignature(params,TOKEN))&#123;</span><br><span class="line">        <span class="comment">//如果签名不对，结束请求并返回</span></span><br><span class="line">        response.end(<span class="string">'signature fail'</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (request.method == <span class="string">"GET"</span>) &#123;</span><br><span class="line">        <span class="comment">//如果请求是GET，返回echostr用于通过服务器有效校验</span></span><br><span class="line">        response.end(params.echostr);</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="comment">//否则是微信给开发者服务器的POST请求</span></span><br><span class="line">        <span class="keyword">var</span> postdata=<span class="string">''</span>;</span><br><span class="line">        request.addListener(<span class="string">"data"</span>,<span class="function"><span class="keyword">function</span>(<span class="params">postchunk</span>)</span>&#123;</span><br><span class="line">            postdata+=postchunk;</span><br><span class="line">        &#125;);</span><br><span class="line">        <span class="comment">//获取到了POST数据</span></span><br><span class="line">        request.addListener(<span class="string">"end"</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(postdata);</span><br><span class="line">            response.end(<span class="string">'success '</span>);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">server.listen(PORT, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'Server running at port:'</span>+PORT);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
 <p>微信发起的请求直接到我们本地，那还不是我想怎么玩就怎么玩，嘿嘿嘿！具体操作看<a href="https://blog.csdn.net/yezhenxu1992/article/details/51691649" target="_blank" rel="noopener">这里</a><br>修改接口配置成功后就可以调用测试号里面的所有js接口了，实现本地调试微信公众号不再是奢望！！！</p>
 
-                <hr>
-                
-
-                <ul class="pager">
-                    
-                    <li class="previous">
-                        <a href="/2018/04/09/图片压缩/" data-toggle="tooltip" data-placement="top"
-                           title="Canvas实现图片压缩上传">&larr; Previous Post</a>
-                    </li>
-                    
-                    
-                </ul>
-
-                
-
-                
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="www.lookpeakfans.xyz/2018/04/09/ngrok/" title="微信公众号本地调试小技巧" target="_blank" rel="external">www.lookpeakfans.xyz/2018/04/09/ngrok/</a>
+    </li>
+    
+    
+  </ul>
+</blockquote>
 
 
-                <!--加入新的评论系统-->
-                
-            </div>
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/lishaoh" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar.jpeg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/lishaoh" target="_blank"><span class="text-dark">lishaoh</span><small class="ml-1x">Web Developer</small></a></h3>
+        <div>个人简介。</div>
+      </div>
+    </figure>
+  </div>
+</div>
 
-            <div class="hidden-xs col-sm-3 toc-col">
-                <div class="toc-wrap">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#ngrok使用"><span class="toc-text">ngrok使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-为什么要用ngrok"><span class="toc-text">1. 为什么要用ngrok</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-使用ngrok"><span class="toc-text">2.使用ngrok</span></a></li></ol></li></ol>
-                </div>
-            </div>
-        </div>
-
-        <!--<div class="row">-->
-            <!--&lt;!&ndash; Sidebar Container &ndash;&gt;-->
-
-            <!--<div class="-->
-                <!--col-lg-8 col-lg-offset-2-->
-                <!--col-md-10 col-md-offset-1-->
-                <!--sidebar-container">-->
-
-                <!--&lt;!&ndash; Featured Tags &ndash;&gt;-->
-                <!---->
-                <!--<section>-->
-                    <!--&lt;!&ndash; no hr &ndash;&gt;-->
-                    <!--<h5 class="text-center">-->
-                        <!--<a href="/tags/">FEATURED TAGS</a>-->
-                    <!--</h5>-->
-                    <!--<div class="tags">-->
-                        <!---->
-                    <!--</div>-->
-                <!--</section>-->
-                <!---->
-
-                <!--&lt;!&ndash; Friends Blog &ndash;&gt;-->
-                <!---->
-            <!--</div>-->
-        <!--</div>-->
 
     </div>
-</article>
+  </article>
+  
+    
+  <section id="comments">
+  	
+       
+    <div id="vcomments"></div>
+
+    
+    
+  </section>
 
 
+  
+</div>
 
-
-
-
-
-<!-- Footer -->
-<!-- Footer -->
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
-                <br>
-                <ul class="list-inline text-center">
-                
-                
-                
-                    <li>
-                        <a target="_blank" href="https://www.zhihu.com/people/lishaoh">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa  fa-stack-1x fa-inverse">知</i>
-                            </span>
-                        </a>
-                    </li>
-                
-
-                
-                    <li>
-                        <a target="_blank" href="http://weibo.com/5831478442/profile">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-                
-
-                
-
-                
-                    <li>
-                        <a target="_blank"  href="https://github.com/lishaoh">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-                
-
-                
-
-                </ul>
-                <p class="copyright text-muted">
-                    Copyright &copy; lishaoh 2018
-                    <br>
-                    <span id="busuanzi_container_site_pv" style="font-size: 12px;">PV: <span id="busuanzi_value_site_pv"></span> Times</span>
-                    <!--<br>-->
-                    <!--Theme by <a href="https://haojen.github.io/">ShaoHua Li</a>-->
-                </p>
-
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/2018/04/09/图片压缩/" title="Canvas实现图片压缩上传"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+    </li>
+    
+    
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>赏</span></button>
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat" data-mobile-sites="weibo,qq,qzone,wechat"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>感谢您的支持，我会继续努力的!</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="/images/donate/alipayimg.jpeg" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开支付宝扫一扫，即可进行扫码打赏哦</p>
             </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="/images/donate/wechatpayimg.png" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开微信扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> 支付宝</a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> 微信支付</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/lishaoh" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="http://weibo.com/5831478442/profile" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
         </div>
     </div>
 </footer>
-
-<!-- jQuery -->
-<script src="/js/jquery.min.js"></script>
-
-<!-- Bootstrap Core JavaScript -->
-<script src="/js/bootstrap.min.js"></script>
-
-<!-- Custom Theme JavaScript -->
-<script src="/js/blog.js"></script>
-
-<!-- async load function -->
+  <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
 <script>
-    function async(u, c) {
-      var d = document, t = 'script',
-          o = d.createElement(t),
-          s = d.getElementsByTagName(t)[0];
-      o.src = u;
-      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
-      s.parentNode.insertBefore(o, s);
-    }
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 </script>
-
-<!-- jquery.tagcloud.js -->
-<script>
-    // only load tagcloud.js in tag.html
-    if($('#tag_cloud').length !== 0){
-        async("http://ShaoHuaLi.coding.me/js/jquery.tagcloud.js",function(){
-            $.fn.tagcloud.defaults = {
-                //size: {start: 1, end: 1, unit: 'em'},
-                color: {start: '#bbbbee', end: '#0085a1'},
-            };
-            $('#tag_cloud a').tagcloud();
-        })
-    }
+<script src="/js/plugin.min.js"></script>
+<script src="/js/application.js"></script>
+  
+    
+    
+    
+        <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
 </script>
-
-<!--fastClick.js -->
-<script>
-    async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
-        var $nav = document.querySelector("nav");
-        if($nav) FastClick.attach($nav);
-    })
-</script>
-
-<!-- Google Analytics -->
+<script src="/js/insight.js"></script>
+    
+    
+    
+        
 
 
+    
+    
+        
+    
+   <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+   <script src="//cdn.jsdelivr.net/npm/valine"></script>
+   <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+     var meta = 'nick,mail,link';
+     meta = meta.split(',').filter(function (item) {
+       return GUEST.indexOf(item)>-1;
+     });
+     new Valine({
+         el: '#vcomments' ,
+         verify: false,
+         notify: false,
+         appId: '',
+         appKey: '',
+         placeholder: 'Just go go',
+         avatar:'mm',
+         meta:meta,
+         pageSize:'10' || 10,
+         visitor: false
+     });
+   </script>
 
-<!-- Baidu Tongji -->
+    
+
+    
+    
 
 
-<!-- swiftype -->
-<script type="text/javascript">
-  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
-  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
-  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
-  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
 
-  _st('install','','2.0.0');
-</script>
-
-<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-<!--wechat title img-->
-<img class="wechat-title-img" src="images/avatar.jpeg">
 </body>
-
 </html>

@@ -6,7 +6,7 @@
 title: lishaoh # your blog title name
 subtitle:
 author: lishaoh # 作者
-language:
+language: zh-CN
 timezone:
 
 # custom Site settings
@@ -22,7 +22,7 @@ favicon: # your favicon png
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://ShaoHuaLi.coding.me
+url: www.lookpeakfans.xyz
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -126,7 +126,7 @@ markdown:
     - markdown-it-emoji
 
 ## Themes: https://hexo.io/themes/
-theme: anisina
+theme: pure
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
@@ -151,8 +151,47 @@ post-default-img-mobile: https://timgsa.baidu.com/timg?image&quality=80&size=b99
 
 # search api , set your custom key
 swiftype_key:
+nofollow:
+  enable: true
+  exclude:
+    - https://github.com/lishaoh
+    - www.lookpeakfans.xyz
+    - http://weibo.com/5831478442/profile
 
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
+  hub:
+  content:
 
+jsonContent:
+  ignore:
+    - path/to/a/page
+    - url/to/one/post
+    - an-entire-category
+    - specific.file
+    - .ext # a file extension
+neat_enable: true
+neat_html:
+  enable: ture
+  exclude:
+neat_css:
+  enable: true
+  exclude:
+    - '*.min.css'
+neat_js:
+  enable: true
+  mangle: true
+  output:
+  compress:
+  exclude:
+    - '*.min.js'
+
+sitemap:
+    path: sitemap.xml
+baidusitemap:
+  path: baidusitemap.xml
 # archive page title
 archive:
     title: archives

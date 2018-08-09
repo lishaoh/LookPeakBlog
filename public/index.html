@@ -1,624 +1,569 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<!-- Head tag -->
+<html lang=zh>
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="李少华在 Github 上的个人博客">
-    <meta name="keyword" content="">
-    <meta name="theme-color" content="#600090">
-    <meta name="msapplication-navbutton-color" content="#600090">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="#600090">
-    <link rel="shortcut icon" href="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-person-128.png">
-    <link rel="alternate" type="application/atom+xml" title="lishaoh" href="/atom.xml">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
-    <title>
-        
-        lishaoh&#39;s blog
-        
-    </title>
+  <meta charset="utf-8">
+  <meta name=referrer content=never>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>Hexo</title>
+  <meta name="description" content="李少华在 Github 上的个人博客">
+<meta property="og:type" content="website">
+<meta property="og:title" content="lishaoh">
+<meta property="og:url" content="www.lookpeakfans.xyz/index.html">
+<meta property="og:site_name" content="lishaoh">
+<meta property="og:description" content="李少华在 Github 上的个人博客">
+<meta property="og:locale" content="zh-CN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="lishaoh">
+<meta name="twitter:description" content="李少华在 Github 上的个人博客">
+  <!-- Canonical links -->
+  <link rel="canonical" href="www.lookpeakfans.xyz/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="lishaoh" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  <!-- font-awesome CSS -->
+  <!-- <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> -->
+  <link rel="stylesheet" href="/css/style.css">
+  
+    
+    
 
-    <link rel="canonical" href="http://ShaoHuaLi.coding.me/">
-
-    <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/blog-style.css">
-
-    <!-- Pygments Github CSS -->
-    <link rel="stylesheet" href="/css/syntax.css">
 </head>
 
-<style>
 
-    header.intro-header {
-        background-image: url('images/home.jpg')
-    }
-</style>
-<!-- hack iOS CSS :active style -->
-<body ontouchstart="" class="animated fadeIn">
-<!-- Navigation -->
-<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost = "false" data-istags="false
-" data-ishome = "true" >
-    <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header page-scroll">
-            <button type="button" class="navbar-toggle">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand animated pulse" href="/">
-                <span class="brand-logo">
-                    lishaoh
-                </span>
-                's Blog
-            </a>
+<body class="main-center theme-black" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/lishaoh" target="_blank">
+          <img class="img-circle img-rotate" src="/images/avatar.jpeg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">lishaoh</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">Web Developer</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> Beijing, China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
         </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <!-- Known Issue, found by Hux:
-            <nav>'s height woule be hold on by its content.
-            so, when navbar scale out, the <nav> will cover tags.
-            also mask any touch event of tags, unfortunately.
-        -->
-        <!-- /.navbar-collapse -->
-        <div id="huxblog_navbar">
-            <div class="navbar-collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="/">Home</a>
-                    </li>
-					
-                    
-					
-					
-                </ul>
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">分类</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">项目</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-books">
+          <a href="/books">
+            
+            <i class="icon icon-book-fill"></i>
+            
+            <span class="menu-title">书单</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links">
+            
+            <i class="icon icon-friendship"></i>
+            
+            <span class="menu-title">友链</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">关于</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/lishaoh" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="http://weibo.com/5831478442/profile" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>欢迎交流与分享经验!</p>
             </div>
         </div>
     </div>
-    <!-- /.container -->
-</nav>
-<script>
-    // Drop Bootstarp low-performance Navbar
-    // Use customize navbar with high-quality material design animation
-    // in high-perf jank-free CSS3 implementation
-//    var $body   = document.body;
-    var $toggle = document.querySelector('.navbar-toggle');
-    var $navbar = document.querySelector('#huxblog_navbar');
-    var $collapse = document.querySelector('.navbar-collapse');
+</div>
 
-    $toggle.addEventListener('click', handleMagic)
-    function handleMagic(e){
-        if ($navbar.className.indexOf('in') > 0) {
-        // CLOSE
-            $navbar.className = " ";
-            // wait until animation end.
-            setTimeout(function(){
-                // prevent frequently toggle
-                if($navbar.className.indexOf('in') < 0) {
-                    $collapse.style.height = "0px"
-                }
-            },400)
-        }else{
-        // OPEN
-            $collapse.style.height = "auto"
-            $navbar.className += " in";
-        }
-    }
-</script>
+    
+      
 
-<!-- Main Content -->
+    
+      
 
-
-<style>
-
-    .custom-haojen-container .post-preview:nth-of-type(1),
-    .custom-haojen-container .post-preview-poetry:nth-of-type(1) {
-        text-align: center;
-        background-repeat: no-repeat;
-        border-radius: 3px;
-        background-size: cover;
-        padding: 0;
-        height: 300px;
-        display: table;
-        width: 100%;
-        background-color: rgba(0, 0, 0, 0.16);
-    }
-
-    /*去掉诗歌的背景图片*/
-    .custom-haojen-container .post-preview-poetry:nth-of-type(1) {
-        background-image: none !important;
-        background-color: rgba(255, 248, 220, 0.5);
-    }
-
-    .custom-haojen-container .post-preview:nth-child(1) h2,
-    .custom-haojen-container .post-preview:nth-child(1) .post-meta,
-    .custom-haojen-container .post-preview:nth-child(1) .post-subtitle {
-        text-shadow: 0 0 40px rgba(0, 0, 0, 1);
-        letter-spacing: 1px;
-        color: #fff;
-        margin-top: 0;
-        padding-left: 60px;
-        padding-right: 60px;
-    }
-
-    .custom-haojen-container .post-preview:nth-child(1) .post-meta {
-        font-size: .9em;
-        font-weight: 300;
-        margin-top: 0;
-    }
-
-    .custom-haojen-container .post-preview-poetry:nth-child(1) .post-subtitle {
-        letter-spacing: 6px;
-        font-size: 18px;
-        font-family: unset;
-        font-weight: 400;
-        color: rgba(0, 0, 0, .75)
-    }
-
-    /*不显示摘要*/
-    .custom-haojen-container .post-preview:nth-child(1) .post-content-preview {
-        display: none
-    }
-
-    /*只第一个显示背景图片*/
-    .custom-haojen-container .post-preview:not(:nth-child(1)) {
-        background-image: none !important;
-    }
-
-    /*第一个分界线去掉*/
-    .custom-haojen-container hr:nth-of-type(1) {
-        display: none;
-    }
-
-    /*主题*/
-    .custom-haojen-container .post-preview:nth-of-type(1) > a {
-        display: table-cell;
-        vertical-align: middle;
-    }
-
-    /*诗词标题*/
-    .custom-haojen-container .post-preview-poetry:nth-child(1) h2 {
-        font-size: 35px;
-        font-family: STKaiti;
-        color: rgba(0, 0, 0, .8);
-    }
-
-    .custom-haojen-container .post-preview-poetry:nth-of-type(1) .post-meta {
-        color: #0e2231;
-    }
-
-    @media (max-width: 768px) {
-        .custom-haojen-container .post-preview:nth-child(1) {
-            height: 240px;
-        }
-
-        .custom-haojen-container .post-preview-poetry:nth-child(1) h2 {
-            font-size: 28px !important;
-            margin-top: 0;
-        }
-
-        .custom-haojen-container .post-preview:nth-child(1) .post-subtitle {
-            font-size: 18px;
-            font-weight: 400;
-            padding-left: 0;
-            padding-right: 0;
-        }
-
-        .custom-haojen-container .post-preview:nth-of-type(1) > a {
-            padding: 20px
-        }
-    }
-
-    /*手机屏幕*/
-    @media (max-width: 400px) {
-        .custom-haojen-container .post-preview:nth-child(1) {
-            height: 195px;
-        }
-
-        .custom-haojen-container .post-preview-poetry:nth-child(1) h2 {
-            font-size: 20px !important;
-        }
-
-        .custom-haojen-container .post-preview:nth-child(1) .post-subtitle {
-            font-size: 16px;
-        }
-
-        .custom-haojen-container .post-preview:nth-child(1) a {
-            padding: 30px 20px;
-        }
-    }
-</style>
-
-<!-- Page Header -->
-<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 visible-xs-block visible-sm-block">
-    <div class="row">
-        <header class="intro-header">
-            <div class="container">
-                <div class="site-heading text-center">
-                    <div class="about-me">
-                        <!--移动端头部显示-->
-                        <img src="images/avatar.jpeg"/>
-                        <h5><a href="/about/">lishaoh</a></h5>
-                        <p>大智若愚</p>
-                    </div>
-                </div>
-            </div>
-        </header>
+    
+      
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a><span class="archive-list-count">3</span></li></ul>
     </div>
-</div>
-<!-- Main Content -->
-<div class="container custom-haojen-container">
-    <!-- Post Container -->
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-1 col-md-8 col-md-offset-1 col-sm-12 col-xs-12 post-container">
-            <!-- Main Content -->
+  </div>
 
 
-
-<div class="post-preview "
-     style="background-image: url('https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1523271603142&di=be4db47c9ddad9cc69dae89ca78f0bec&imgtype=0&src=http%3A%2F%2Fbpic.ooopic.com%2F16%2F67%2F95%2F16679525-a0b2cc218fe33d9819656c5429c3d4c8-3.jpg')">
-    <a href="/2018/05/18/预览PDF文件/">
-        <h2 class="post-title">
-            PDF.js预览文件
-        </h2>
-        <p class="post-meta">
-            <i class="fa fa-calendar" aria-hidden="true"></i> 2018-05-18
-        </p>
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
         
-        <div class="post-content-preview">
-            <p>
-                网上找到很多前端实现文件预览方法，但都无法解决我的问题，产品需求中将文件上传到腾讯云的对象存储，返回一个URL，这个URL无法在网页中预览，浏览器将这个URL直接本地下载文件（下载文件下面说）,最后只能用PDF.js，这是一个开源的js库，直接将PDF文件渲染成canvas，PDF.js框架的魅..
-            </p>
-        </div>
-    </a>
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2018/07/19/与小程序间的相爱相杀/" class="title">(no title)</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-07-19T03:05:12.000Z" itemprop="datePublished">2018-07-19</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2018/05/18/预览PDF文件/" class="title">PDF.js预览文件</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-05-18T10:35:07.000Z" itemprop="datePublished">2018-05-18</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2018/05/17/CSS实现文字滚动，类似公告展示/" class="title">CSS实现文字滚动，类型京东商城公告栏</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-05-17T11:44:26.000Z" itemprop="datePublished">2018-05-17</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2018/05/17/前端预览文件/" class="title">前端实现在线预览pdf、word、xls、ppt等文件</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-05-17T08:33:37.000Z" itemprop="datePublished">2018-05-17</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2018/04/19/wx_sdk/" class="title">微信JSSDK遇到的那些坑</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-04-19T09:53:52.000Z" itemprop="datePublished">2018-04-19</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
 
-</div>
+    
+  </div>
+</aside>
 
-<hr>
-
-
-
-<div class="post-preview "
-     style="background-image: url('https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1523271603142&di=be4db47c9ddad9cc69dae89ca78f0bec&imgtype=0&src=http%3A%2F%2Fbpic.ooopic.com%2F16%2F67%2F95%2F16679525-a0b2cc218fe33d9819656c5429c3d4c8-3.jpg')">
-    <a href="/2018/05/17/CSS实现文字滚动，类似公告展示/">
-        <h2 class="post-title">
-            CSS实现文字滚动，类型京东商城公告栏
-        </h2>
-        <p class="post-meta">
-            <i class="fa fa-calendar" aria-hidden="true"></i> 2018-05-17
-        </p>
-        
-        <div class="post-content-preview">
-            <p>
-                实现文字滚动，第一时间想用swiper进行，但是需求功能较少，不需要引用外部swiper.js，直接用CSS的animate属性实现文字滚动，2秒滚动一次，实现如下:
-&lt;div class="notice"&gt; &lt;ul&gt; &lt;li&gt;第1条公告第1条公告第1条公告第..
-            </p>
-        </div>
-    </a>
-
-</div>
-
-<hr>
-
-
-
-<div class="post-preview "
-     style="background-image: url('https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1523271603142&di=be4db47c9ddad9cc69dae89ca78f0bec&imgtype=0&src=http%3A%2F%2Fbpic.ooopic.com%2F16%2F67%2F95%2F16679525-a0b2cc218fe33d9819656c5429c3d4c8-3.jpg')">
-    <a href="/2018/05/17/前端预览文件/">
-        <h2 class="post-title">
-            前端实现在线预览pdf、word、xls、ppt等文件
-        </h2>
-        <p class="post-meta">
-            <i class="fa fa-calendar" aria-hidden="true"></i> 2018-05-17
-        </p>
-        
-        <div class="post-content-preview">
-            <p>
-                1、前端实现pdf文件在线预览功能方式一: 通过a标签href属性实现pdf文件理论上可以在浏览器直接打开预览但是需要打开新页面。在仅仅是预览pdf文件且UI要求不高的情况下可以直接通过a标签href属性实现预览&lt;a href="文档地址"&gt;&lt;/a&gt;
-方式二: 通过jqu..
-            </p>
-        </div>
-    </a>
-
-</div>
-
-<hr>
-
-
-
-<div class="post-preview "
-     style="background-image: url('https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1523271603142&di=be4db47c9ddad9cc69dae89ca78f0bec&imgtype=0&src=http%3A%2F%2Fbpic.ooopic.com%2F16%2F67%2F95%2F16679525-a0b2cc218fe33d9819656c5429c3d4c8-3.jpg')">
-    <a href="/2018/04/19/wx_sdk/">
-        <h2 class="post-title">
-            微信JSSDK遇到的那些坑
-        </h2>
-        <p class="post-meta">
-            <i class="fa fa-calendar" aria-hidden="true"></i> 2018-04-19
-        </p>
-        
-        <div class="post-content-preview">
-            <p>
-                作为一个前端开发者，相信很多同道中人在微信公众号的开发中被坑的很惨，我也分享开发过程中的一点点经验给大家，可以减少很多弯路。由于项目需要，前端开发使用的是angular4.0技术，微信开发工具v1.02。前端开发公众号最坑的就是微信JSSDK的使用，前面坑路漫漫，我还得一步一步趟过去。
-JSSD..
-            </p>
-        </div>
-    </a>
-
-</div>
-
-<hr>
-
-
-
-<div class="post-preview "
-     style="background-image: url('https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1523271603142&di=be4db47c9ddad9cc69dae89ca78f0bec&imgtype=0&src=http%3A%2F%2Fbpic.ooopic.com%2F16%2F67%2F95%2F16679525-a0b2cc218fe33d9819656c5429c3d4c8-3.jpg')">
-    <a href="/2018/04/09/图片压缩/">
-        <h2 class="post-title">
-            Canvas实现图片压缩上传
-        </h2>
-        <p class="post-meta">
-            <i class="fa fa-calendar" aria-hidden="true"></i> 2018-04-09
-        </p>
-        
-        <div class="post-content-preview">
-            <p>
-                接到产品需求，问能不能将前端上传的图片压缩？像移动端上传图片，一般都是超清、高清图片，大小也有10M，甚至一张图片大小有15M左右，这样大的图片上传到腾讯云或者阿里云（没使用服务器上传图片）一方面上传速度慢，影响体验，另一方面体积太大占空间，图片压缩避免了，网上搜到了很多这方面介绍的网址，大多数..
-            </p>
-        </div>
-    </a>
-
-</div>
-
-<hr>
-
-
-
-<div class="post-preview "
-     style="background-image: url('https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1523271603142&di=be4db47c9ddad9cc69dae89ca78f0bec&imgtype=0&src=http%3A%2F%2Fbpic.ooopic.com%2F16%2F67%2F95%2F16679525-a0b2cc218fe33d9819656c5429c3d4c8-3.jpg')">
-    <a href="/2018/04/09/ngrok/">
-        <h2 class="post-title">
-            微信公众号本地调试小技巧
-        </h2>
-        <p class="post-meta">
-            <i class="fa fa-calendar" aria-hidden="true"></i> 2018-04-09
-        </p>
-        
-        <div class="post-content-preview">
-            <p>
-                本地调试是公众号开发过程中不可缺少的步骤，我们不可能每次开发都上传到服务器再用微信去查看本地效果，这样一方面效率低，另一方面存在一定的风险性。那么有没有什么办法能够让开发者本地调试代码呢，答案是有的，网上搜出了很多方法，比如ngrok、花生壳、natapp.cn等工具，下面介绍的是ngrok，其..
-            </p>
-        </div>
-    </a>
-
-</div>
-
-<hr>
-
-
-
-
-<!-- 翻页 pager -->
-
-<ul class="pager">
+  
+  <main class="main" role="main">
+  
+  <div class="content article-list">
+    
+      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="article-header">
+    
+  </div>
+  
+  <p class="article-meta">
+    <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2018/07/19/与小程序间的相爱相杀/" class="article-date">
+	  <time datetime="2018-07-19T03:05:12.000Z" itemprop="datePublished">7月 19</time>
+	</a>
+</span>
     
     
-</ul>
 
+    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2018/07/19/与小程序间的相爱相杀/#comments" class="article-comment-link">评论</a></span>
+    
+  </p>
+</article>
 
-        </div>
-        <!-- Sidebar Container -->
-        <div class="
-                col-lg-3 col-lg-offset-0
-                col-md-3 col-md-offset-0
-                col-sm-12
-                col-xs-12
-                sidebar-container
-            ">
+    
+      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="article-header">
+    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/18/预览PDF文件/">PDF.js预览文件</a>
+    </h1>
+  
 
-            <!-- About Me -->
-            <section class="visible-md visible-lg" style="padding: 0 18px">
-                <div class="short-about">
-                    <!--侧边栏头像-->
-                    
-                    <img src="/images/avatar.jpeg"/>
-                    
-                    <h5><a href="/about/">lishaoh</a></h5>
-                    
-                    <p>大智若愚</p>
-                    
-                    <hr>
-                    <!-- SNS Link 社交 -->
-                    <ul class="list-inline">
-                        
-                        
-                        
-                        <li>
-                            <a target="_blank" href="https://www.zhihu.com/people/lishaoh">
-                                        <span class="fa-stack fa-lg">
-                                            <i class="fa fa-circle fa-stack-2x"></i>
-                                            <i class="fa  fa-stack-1x fa-inverse">知</i>
-                                        </span>
-                            </a>
-                        </li>
-                        
+  </div>
+  
+  <p class="article-meta">
+    <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2018/05/18/预览PDF文件/" class="article-date">
+	  <time datetime="2018-05-18T10:35:07.000Z" itemprop="datePublished">5月 18</time>
+	</a>
+</span>
+    
+    
 
-                        
-                        <li>
-                            <a target="_blank" href="http://weibo.com/5831478442/profile">
-                                        <span class="fa-stack fa-lg">
-                                            <i class="fa fa-circle fa-stack-2x"></i>
-                                            <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
-                                        </span>
-                            </a>
-                        </li>
-                        
+    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2018/05/18/预览PDF文件/#comments" class="article-comment-link">评论</a></span>
+    
+  </p>
+</article>
 
-                        
+    
+      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="article-header">
+    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/17/CSS实现文字滚动，类似公告展示/">CSS实现文字滚动，类型京东商城公告栏</a>
+    </h1>
+  
 
-                        
-                        <li>
-                            <a target="_blank" href="https://github.com/lishaoh">
-                                        <span class="fa-stack fa-lg">
-                                            <i class="fa fa-circle fa-stack-2x"></i>
-                                            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                                        </span>
-                            </a>
-                        </li>
-                        
+  </div>
+  
+  <p class="article-meta">
+    <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2018/05/17/CSS实现文字滚动，类似公告展示/" class="article-date">
+	  <time datetime="2018-05-17T11:44:26.000Z" itemprop="datePublished">5月 17</time>
+	</a>
+</span>
+    
+    
 
-                        
-                    </ul>
-                </div>
-            </section>
+    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2018/05/17/CSS实现文字滚动，类似公告展示/#comments" class="article-comment-link">评论</a></span>
+    
+  </p>
+</article>
 
-            <!-- Featured Tags  标签 -->
-            
-            <section>
-                <div class="tags">
-                    
-                </div>
-            </section>
-            
+    
+      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="article-header">
+    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/17/前端预览文件/">前端实现在线预览pdf、word、xls、ppt等文件</a>
+    </h1>
+  
 
-            
+  </div>
+  
+  <p class="article-meta">
+    <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2018/05/17/前端预览文件/" class="article-date">
+	  <time datetime="2018-05-17T08:33:37.000Z" itemprop="datePublished">5月 17</time>
+	</a>
+</span>
+    
+    
 
-        </div>
-    </div>
-</div>
+    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2018/05/17/前端预览文件/#comments" class="article-comment-link">评论</a></span>
+    
+  </p>
+</article>
 
-<!-- Footer -->
-<!-- Footer -->
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
-                <br>
-                <ul class="list-inline text-center">
-                
-                
-                
-                    <li>
-                        <a target="_blank" href="https://www.zhihu.com/people/lishaoh">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa  fa-stack-1x fa-inverse">知</i>
-                            </span>
-                        </a>
-                    </li>
-                
+    
+      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="article-header">
+    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/04/19/wx_sdk/">微信JSSDK遇到的那些坑</a>
+    </h1>
+  
 
-                
-                    <li>
-                        <a target="_blank" href="http://weibo.com/5831478442/profile">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-                
+  </div>
+  
+  <p class="article-meta">
+    <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2018/04/19/wx_sdk/" class="article-date">
+	  <time datetime="2018-04-19T09:53:52.000Z" itemprop="datePublished">4月 19</time>
+	</a>
+</span>
+    
+    
 
-                
+    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2018/04/19/wx_sdk/#comments" class="article-comment-link">评论</a></span>
+    
+  </p>
+</article>
 
-                
-                    <li>
-                        <a target="_blank"  href="https://github.com/lishaoh">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-                
+    
+      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="article-header">
+    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/04/09/图片压缩/">Canvas实现图片压缩上传</a>
+    </h1>
+  
 
-                
+  </div>
+  
+  <p class="article-meta">
+    <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2018/04/09/图片压缩/" class="article-date">
+	  <time datetime="2018-04-09T09:42:58.000Z" itemprop="datePublished">4月 9</time>
+	</a>
+</span>
+    
+    
 
-                </ul>
-                <p class="copyright text-muted">
-                    Copyright &copy; lishaoh 2018
-                    <br>
-                    <span id="busuanzi_container_site_pv" style="font-size: 12px;">PV: <span id="busuanzi_value_site_pv"></span> Times</span>
-                    <!--<br>-->
-                    <!--Theme by <a href="https://haojen.github.io/">ShaoHua Li</a>-->
-                </p>
+    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2018/04/09/图片压缩/#comments" class="article-comment-link">评论</a></span>
+    
+  </p>
+</article>
 
-            </div>
+    
+      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="article-header">
+    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/04/09/ngrok/">微信公众号本地调试小技巧</a>
+    </h1>
+  
+
+  </div>
+  
+  <p class="article-meta">
+    <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2018/04/09/ngrok/" class="article-date">
+	  <time datetime="2018-04-09T09:09:17.000Z" itemprop="datePublished">4月 9</time>
+	</a>
+</span>
+    
+    
+
+    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2018/04/09/ngrok/#comments" class="article-comment-link">评论</a></span>
+    
+  </p>
+</article>
+
+    
+  </div>
+
+   
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/lishaoh" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="http://weibo.com/5831478442/profile" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
         </div>
     </div>
 </footer>
-
-<!-- jQuery -->
-<script src="/js/jquery.min.js"></script>
-
-<!-- Bootstrap Core JavaScript -->
-<script src="/js/bootstrap.min.js"></script>
-
-<!-- Custom Theme JavaScript -->
-<script src="/js/blog.js"></script>
-
-<!-- async load function -->
+  <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
 <script>
-    function async(u, c) {
-      var d = document, t = 'script',
-          o = d.createElement(t),
-          s = d.getElementsByTagName(t)[0];
-      o.src = u;
-      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
-      s.parentNode.insertBefore(o, s);
-    }
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 </script>
-
-<!-- jquery.tagcloud.js -->
-<script>
-    // only load tagcloud.js in tag.html
-    if($('#tag_cloud').length !== 0){
-        async("http://ShaoHuaLi.coding.me/js/jquery.tagcloud.js",function(){
-            $.fn.tagcloud.defaults = {
-                //size: {start: 1, end: 1, unit: 'em'},
-                color: {start: '#bbbbee', end: '#0085a1'},
-            };
-            $('#tag_cloud a').tagcloud();
-        })
-    }
+<script src="/js/plugin.min.js"></script>
+<script src="/js/application.js"></script>
+  
+    
+    
+    
+        <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
 </script>
-
-<!--fastClick.js -->
-<script>
-    async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
-        var $nav = document.querySelector("nav");
-        if($nav) FastClick.attach($nav);
-    })
-</script>
-
-<!-- Google Analytics -->
+<script src="/js/insight.js"></script>
+    
+    
+    
+        
 
 
+    
+    
+    
 
-<!-- Baidu Tongji -->
 
 
-<!-- swiftype -->
-<script type="text/javascript">
-  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
-  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
-  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
-  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
-
-  _st('install','','2.0.0');
-</script>
-
-<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-<!--wechat title img-->
-<img class="wechat-title-img" src="images/avatar.jpeg">
 </body>
-
 </html>

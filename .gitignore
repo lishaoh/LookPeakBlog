@@ -6,3 +6,7 @@ node_modules/
 #public/
 #.deploy*/
 .idea
+public
+_config.yml
+db.json
+source/_posts

@@ -2,13 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>www.lookpeakfans.xyz//404.html</loc>
-    
-    <lastmod>2018-08-10T06:34:58.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>www.lookpeakfans.xyz/2018/08/10/%E4%B8%8E%E5%B0%8F%E7%A8%8B%E5%BA%8F%E9%97%B4%E7%9A%84%E7%9B%B8%E7%88%B1%E7%9B%B8%E6%9D%80/</loc>
     
     <lastmod>2018-08-10T06:18:18.000Z</lastmod>
@@ -30,13 +23,6 @@
   </url>
   
   <url>
-    <loc>www.lookpeakfans.xyz/books/index.html</loc>
-    
-    <lastmod>2018-07-30T18:55:52.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>www.lookpeakfans.xyz/repository/index.html</loc>
     
     <lastmod>2018-07-30T18:55:52.000Z</lastmod>
@@ -52,6 +38,13 @@
   
   <url>
     <loc>www.lookpeakfans.xyz/categories/index.html</loc>
+    
+    <lastmod>2018-07-30T18:55:52.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>www.lookpeakfans.xyz/books/index.html</loc>
     
     <lastmod>2018-07-30T18:55:52.000Z</lastmod>
     

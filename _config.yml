@@ -22,7 +22,7 @@ favicon: # your favicon png
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: www.lookpeakfans.xyz
+url: blog.lookpeakfans.xyz
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -155,7 +155,7 @@ nofollow:
   enable: true
   exclude:
     - https://github.com/lishaoh
-    - www.lookpeakfans.xyz
+    - blog.lookpeakfans.xyz
     - http://weibo.com/5831478442/profile
 
 feed:

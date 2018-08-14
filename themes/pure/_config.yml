@@ -106,12 +106,12 @@ github:
 # Gitment
 # Introduction: https://imsun.net/posts/gitment-introduction/
 comment:
-  type: valine  # 启用哪种评论系统
+  type: livere  # 启用哪种评论系统
   disqus:  # enter disqus shortname here
   youyan: 
     uid: 1783844 # enter youyan uid 
   livere:
-    uid: # enter youyan uid 
+    uid: MTAyMC8zODg3Mi8xNTQwMA== # enter youyan uid
   gitment:
     githubID: 
     repo: 
@@ -210,7 +210,7 @@ profile:
   # My Personal Links
   links:
     Github: https://github.com/lishaoh
-    Blog: www.lookpeakfans.xyz
+    Blog: http://blog.lookpeakfans.xyz
     微博: http://weibo.com/5831478442/profile
 #    花瓣: http://huaban.com/cofess
 #    Behance: https://www.behance.net/cofess

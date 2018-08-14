@@ -1,5 +1,9 @@
 ---
 title: 'CSS实现文字滚动，类型京东商城公告栏'
+tags:
+    - CSS
+categories:
+    - 前端
 ---
 实现文字滚动，第一时间想用swiper进行，但是需求功能较少，不需要引用外部swiper.js，直接用CSS的animate属性实现文字滚动，2秒滚动一次，实现如下:
 

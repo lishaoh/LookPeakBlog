@@ -4,92 +4,12 @@
 
     
   <url>
-    <loc>blog.lookpeakfans.xyz/2018/09/12/css/</loc>
-    <lastmod>2018-09-12T08:07:39.000Z</lastmod>
-    <data>
-        <display>
-        <title>CSS实现文字滚动，类型京东商城公告栏</title>
-        <pubTime>2018-09-12T08:07:39.000Z</pubTime>
-        
-        <tag>CSS</tag>
-         
-         
-           
-             
-              <breadCrumb title="前端" url="blog.lookpeakfans.xyz/categories/%E5%89%8D%E7%AB%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>blog.lookpeakfans.xyz/2018/08/14/%E9%A2%84%E8%A7%88PDF%E6%96%87%E4%BB%B6/</loc>
-    <lastmod>2018-08-14T03:51:31.000Z</lastmod>
-    <data>
-        <display>
-        <title>PDF.js预览文件</title>
-        <pubTime>2018-08-14T03:51:31.000Z</pubTime>
-        
-        <tag>JS</tag>
-         
-         
-           
-             
-              <breadCrumb title="前端" url="blog.lookpeakfans.xyz/categories/%E5%89%8D%E7%AB%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>blog.lookpeakfans.xyz/2018/08/14/%E5%9B%BE%E7%89%87%E5%8E%8B%E7%BC%A9/</loc>
-    <lastmod>2018-08-14T03:51:27.000Z</lastmod>
-    <data>
-        <display>
-        <title>Canvas实现图片压缩上传</title>
-        <pubTime>2018-08-14T03:51:27.000Z</pubTime>
-        
-        <tag>JS</tag>
-         
-         
-           
-             
-              <breadCrumb title="前端" url="blog.lookpeakfans.xyz/categories/%E5%89%8D%E7%AB%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>blog.lookpeakfans.xyz/2018/08/14/%E5%89%8D%E7%AB%AF%E9%A2%84%E8%A7%88%E6%96%87%E4%BB%B6/</loc>
-    <lastmod>2018-08-14T03:51:23.000Z</lastmod>
-    <data>
-        <display>
-        <title>前端实现在线预览pdf、word、xls、ppt等文件</title>
-        <pubTime>2018-08-14T03:51:23.000Z</pubTime>
-        
-        <tag>JS</tag>
-         
-         
-           
-             
-              <breadCrumb title="前端" url="blog.lookpeakfans.xyz/categories/%E5%89%8D%E7%AB%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>blog.lookpeakfans.xyz/2018/08/14/%E4%B8%8E%E5%B0%8F%E7%A8%8B%E5%BA%8F%E9%97%B4%E7%9A%84%E7%9B%B8%E7%88%B1%E7%9B%B8%E6%9D%80/</loc>
-    <lastmod>2018-08-14T03:51:19.000Z</lastmod>
+    <loc>blog.lookpeakfans.xyz/2018/09/12/wechat-applet/</loc>
+    <lastmod>2018-09-12T08:27:50.000Z</lastmod>
     <data>
         <display>
         <title>与小程序的相爱相杀</title>
-        <pubTime>2018-08-14T03:51:19.000Z</pubTime>
+        <pubTime>2018-09-11T16:00:00.000Z</pubTime>
         
         <tag>小程序</tag>
          
@@ -104,12 +24,72 @@
 
     
   <url>
-    <loc>blog.lookpeakfans.xyz/2018/08/14/wx_sdk/</loc>
-    <lastmod>2018-08-14T03:51:15.000Z</lastmod>
+    <loc>blog.lookpeakfans.xyz/2018/07/22/preview-pdf/</loc>
+    <lastmod>2018-09-12T08:14:26.000Z</lastmod>
+    <data>
+        <display>
+        <title>PDF.js预览文件</title>
+        <pubTime>2018-07-21T16:00:00.000Z</pubTime>
+        
+        <tag>JS</tag>
+         
+         
+           
+             
+              <breadCrumb title="前端" url="blog.lookpeakfans.xyz/categories/%E5%89%8D%E7%AB%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>blog.lookpeakfans.xyz/2018/07/20/compress-image/</loc>
+    <lastmod>2018-09-12T08:14:03.000Z</lastmod>
+    <data>
+        <display>
+        <title>Canvas实现图片压缩上传</title>
+        <pubTime>2018-07-19T16:00:00.000Z</pubTime>
+        
+        <tag>JS</tag>
+         
+         
+           
+             
+              <breadCrumb title="前端" url="blog.lookpeakfans.xyz/categories/%E5%89%8D%E7%AB%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>blog.lookpeakfans.xyz/2018/07/14/preview-file/</loc>
+    <lastmod>2018-09-12T08:13:25.000Z</lastmod>
+    <data>
+        <display>
+        <title>前端实现在线预览pdf、word、xls、ppt等文件</title>
+        <pubTime>2018-07-13T16:00:00.000Z</pubTime>
+        
+        <tag>JS</tag>
+         
+         
+           
+             
+              <breadCrumb title="前端" url="blog.lookpeakfans.xyz/categories/%E5%89%8D%E7%AB%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>blog.lookpeakfans.xyz/2018/06/20/wx-sdk/</loc>
+    <lastmod>2018-09-12T08:12:00.000Z</lastmod>
     <data>
         <display>
         <title>微信JSSDK遇到的那些坑</title>
-        <pubTime>2018-08-14T03:51:15.000Z</pubTime>
+        <pubTime>2018-06-19T16:00:00.000Z</pubTime>
         
         <tag>微信公众号</tag>
          
@@ -124,12 +104,12 @@
 
     
   <url>
-    <loc>blog.lookpeakfans.xyz/2018/08/14/ngrok/</loc>
-    <lastmod>2018-08-14T03:49:28.000Z</lastmod>
+    <loc>blog.lookpeakfans.xyz/2018/06/12/ngrok/</loc>
+    <lastmod>2018-09-12T08:11:35.000Z</lastmod>
     <data>
         <display>
         <title>微信公众号本地调试小技巧</title>
-        <pubTime>2018-08-14T03:49:28.000Z</pubTime>
+        <pubTime>2018-06-11T16:00:00.000Z</pubTime>
         
         <tag>微信公众号</tag>
          
@@ -137,6 +117,26 @@
            
              
               <breadCrumb title="工具" url="blog.lookpeakfans.xyz/categories/%E5%B7%A5%E5%85%B7/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>blog.lookpeakfans.xyz/2018/04/25/css-roll/</loc>
+    <lastmod>2018-09-12T08:10:06.000Z</lastmod>
+    <data>
+        <display>
+        <title>CSS实现文字滚动，类型京东商城公告栏</title>
+        <pubTime>2018-04-24T16:00:00.000Z</pubTime>
+        
+        <tag>CSS</tag>
+         
+         
+           
+             
+              <breadCrumb title="前端" url="blog.lookpeakfans.xyz/categories/%E5%89%8D%E7%AB%AF/"/>
           
         </display>
     </data>

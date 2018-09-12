@@ -4,6 +4,9 @@ tags:
     - CSS
 categories:
     - 前端
+permalink: css-roll
+shared: false
+date: 2018-04-25
 ---
 实现文字滚动，第一时间想用swiper进行，但是需求功能较少，不需要引用外部swiper.js，直接用CSS的animate属性实现文字滚动，2秒滚动一次，实现如下:
 

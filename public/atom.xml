@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="blog.lookpeakfans.xyz/"/>
-  <updated>2018-08-14T03:51:31.000Z</updated>
+  <updated>2018-09-12T08:07:39.000Z</updated>
   <id>blog.lookpeakfans.xyz/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>CSS实现文字滚动，类型京东商城公告栏</title>
+    <link href="blog.lookpeakfans.xyz/2018/09/12/css/"/>
+    <id>blog.lookpeakfans.xyz/2018/09/12/css/</id>
+    <published>2018-09-12T08:07:39.000Z</published>
+    <updated>2018-09-12T08:07:39.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;!-- build time:Wed Sep 12 2018 16:08:11 GMT+0800 (CST) --&gt;&lt;p&gt;实现文字滚动，第一时间想用swiper进行，但是需求功能较少，不需要引用外部swiper.js，直接用CSS的animate属性实现文字滚动，2秒滚动一次，
+      
+    
+    </summary>
+    
+      <category term="前端" scheme="blog.lookpeakfans.xyz/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="CSS" scheme="blog.lookpeakfans.xyz/tags/CSS/"/>
+    
+  </entry>
   
   <entry>
     <title>PDF.js预览文件</title>
@@ -27,7 +50,7 @@
     
       
       
-        &lt;!-- build time:Tue Aug 14 2018 14:21:51 GMT+0800 (CST) --&gt;&lt;p&gt;网上找到很多前端实现文件预览方法，但都无法解决我的问题，产品需求中将文件上传到腾讯云的对象存储，返回一个URL，这个URL无法在网页中预览，浏览器将这个UR
+        &lt;!-- build time:Wed Sep 12 2018 16:05:12 GMT+0800 (CST) --&gt;&lt;p&gt;网上找到很多前端实现文件预览方法，但都无法解决我的问题，产品需求中将文件上传到腾讯云的对象存储，返回一个URL，这个URL无法在网页中预览，浏览器将这个UR
       
     
     </summary>
@@ -50,7 +73,7 @@
     
       
       
-        &lt;!-- build time:Tue Aug 14 2018 14:21:51 GMT+0800 (CST) --&gt;&lt;p&gt;接到产品需求，问能不能将前端上传的图片压缩？像移动端上传图片，一般都是超清、高清图片，大小也有10M，甚至一张图片大小有15M左右，这样大的图片上传到腾讯云
+        &lt;!-- build time:Wed Sep 12 2018 16:05:12 GMT+0800 (CST) --&gt;&lt;p&gt;接到产品需求，问能不能将前端上传的图片压缩？像移动端上传图片，一般都是超清、高清图片，大小也有10M，甚至一张图片大小有15M左右，这样大的图片上传到腾讯云
       
     
     </summary>
@@ -73,7 +96,7 @@
     
       
       
-        &lt;!-- build time:Tue Aug 14 2018 14:21:51 GMT+0800 (CST) --&gt;&lt;h2 id=&quot;1、前端实现pdf文件在线预览功能&quot;&gt;&lt;a href=&quot;#1、前端实现pdf文件在线预览功能&quot; class=&quot;headerlink&quot; title=
+        &lt;!-- build time:Wed Sep 12 2018 16:05:12 GMT+0800 (CST) --&gt;&lt;h2 id=&quot;1、前端实现pdf文件在线预览功能&quot;&gt;&lt;a href=&quot;#1、前端实现pdf文件在线预览功能&quot; class=&quot;headerlink&quot; title=
       
     
     </summary>
@@ -96,7 +119,7 @@
     
       
       
-        &lt;!-- build time:Tue Aug 14 2018 14:21:51 GMT+0800 (CST) --&gt;&lt;h4 id=&quot;问题1：自定义组件时，canvas组件无法注册&quot;&gt;&lt;a href=&quot;#问题1：自定义组件时，canvas组件无法注册&quot; class=&quot;header
+        &lt;!-- build time:Wed Sep 12 2018 16:05:12 GMT+0800 (CST) --&gt;&lt;h4 id=&quot;问题1：自定义组件时，canvas组件无法注册&quot;&gt;&lt;a href=&quot;#问题1：自定义组件时，canvas组件无法注册&quot; class=&quot;header
       
     
     </summary>
@@ -119,7 +142,7 @@
     
       
       
-        &lt;!-- build time:Tue Aug 14 2018 14:21:51 GMT+0800 (CST) --&gt;&lt;p&gt;作为一个前端开发者，相信很多同道中人在微信公众号的开发中被坑的很惨，我也分享开发过程中的一点点经验给大家，可以减少很多弯路。由于项目需要，前端开发使用的是a
+        &lt;!-- build time:Wed Sep 12 2018 16:05:12 GMT+0800 (CST) --&gt;&lt;p&gt;作为一个前端开发者，相信很多同道中人在微信公众号的开发中被坑的很惨，我也分享开发过程中的一点点经验给大家，可以减少很多弯路。由于项目需要，前端开发使用的是a
       
     
     </summary>
@@ -128,29 +151,6 @@
     
     
       <category term="微信公众号" scheme="blog.lookpeakfans.xyz/tags/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CSS实现文字滚动，类型京东商城公告栏</title>
-    <link href="blog.lookpeakfans.xyz/2018/08/14/CSS%E5%AE%9E%E7%8E%B0%E6%96%87%E5%AD%97%E6%BB%9A%E5%8A%A8%EF%BC%8C%E7%B1%BB%E4%BC%BC%E5%85%AC%E5%91%8A%E5%B1%95%E7%A4%BA/"/>
-    <id>blog.lookpeakfans.xyz/2018/08/14/CSS实现文字滚动，类似公告展示/</id>
-    <published>2018-08-14T03:51:04.000Z</published>
-    <updated>2018-08-14T03:51:04.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;!-- build time:Tue Aug 14 2018 14:21:51 GMT+0800 (CST) --&gt;&lt;p&gt;实现文字滚动，第一时间想用swiper进行，但是需求功能较少，不需要引用外部swiper.js，直接用CSS的animate属性实现文字滚动，2秒滚动一次，
-      
-    
-    </summary>
-    
-      <category term="前端" scheme="blog.lookpeakfans.xyz/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-      <category term="CSS" scheme="blog.lookpeakfans.xyz/tags/CSS/"/>
     
   </entry>
   
@@ -165,7 +165,7 @@
     
       
       
-        &lt;!-- build time:Tue Aug 14 2018 14:21:51 GMT+0800 (CST) --&gt;&lt;p&gt;本地调试是公众号开发过程中不可缺少的步骤，我们不可能每次开发都上传到服务器再用微信去查看本地效果，这样一方面效率低，另一方面存在一定的风险性。那么有没有什么
+        &lt;!-- build time:Wed Sep 12 2018 16:05:12 GMT+0800 (CST) --&gt;&lt;p&gt;本地调试是公众号开发过程中不可缺少的步骤，我们不可能每次开发都上传到服务器再用微信去查看本地效果，这样一方面效率低，另一方面存在一定的风险性。那么有没有什么
       
     
     </summary>

@@ -17,12 +17,12 @@ sidebar: custom
   address: '北京市朝阳区',
   education: '本科',
   github: 'https://github.com/Andrew-project',
-  blog: 'www.lookpeakfans.xyz',
+  blog: 'blog.lookpeakfans.xyz',
   email: 'lsh294753@gmail.com',
   description: '致力于小程序、微信公众号与web前端开发',
 
   skills: [
-    ['Html', 'Javascript', 'CSS', 'ES6', 'Node'],
+    ['Html', 'Javascript', 'CSS', 'ES6', 'Node', 'Typescript'],
     ['Less','Sass'],
     ['Angular', 'Ionic'],
     ['小程序', '微信公众号'],

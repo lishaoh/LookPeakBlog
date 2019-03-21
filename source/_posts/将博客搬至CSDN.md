@@ -9,4 +9,4 @@ shared: false
 date: 2019-03-15
 ---
 
-### 此地址不再维护，具体内容更新请到https://blog.csdn.net/Andrew83
+### 此地址与[CSDN](https://blog.csdn.net/Andrew83)内容同步更新

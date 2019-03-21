@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="blog.lookpeakfans.xyz/"/>
-  <updated>2019-03-15T05:24:27.998Z</updated>
+  <updated>2019-03-21T03:29:12.672Z</updated>
   <id>blog.lookpeakfans.xyz/</id>
   
   <author>
@@ -21,13 +21,13 @@
     <link href="blog.lookpeakfans.xyz/2019/03/15/csdn/"/>
     <id>blog.lookpeakfans.xyz/2019/03/15/csdn/</id>
     <published>2019-03-14T16:00:00.000Z</published>
-    <updated>2019-03-15T05:24:27.998Z</updated>
+    <updated>2019-03-21T03:29:12.672Z</updated>
     
     <summary type="html">
     
       
       
-        &lt;!-- build time:Fri Mar 15 2019 13:26:14 GMT+0800 (CST) --&gt;&lt;h3 id=&quot;此地址不再维护，具体内容更新请到https-blog-csdn-net-Andrew83&quot;&gt;&lt;a href=&quot;#此地址不再维护，具体内容更新请到h
+        &lt;!-- build time:Thu Mar 21 2019 11:30:29 GMT+0800 (CST) --&gt;&lt;h3 id=&quot;此地址与CSDN内容同步更新&quot;&gt;&lt;a href=&quot;#此地址与CSDN内容同步更新&quot; class=&quot;headerlink&quot; title=&quot;此地址与C
       
     
     </summary>
@@ -50,7 +50,7 @@
     
       
       
-        &lt;!-- build time:Wed Sep 12 2018 17:36:35 GMT+0800 (CST) --&gt;&lt;h4 id=&quot;Q1：自定义组件时，canvas组件无法注册&quot;&gt;&lt;a href=&quot;#Q1：自定义组件时，canvas组件无法注册&quot; class=&quot;headerli
+        &lt;!-- build time:Thu Mar 21 2019 11:30:29 GMT+0800 (CST) --&gt;&lt;h4 id=&quot;Q1：自定义组件时，canvas组件无法注册&quot;&gt;&lt;a href=&quot;#Q1：自定义组件时，canvas组件无法注册&quot; class=&quot;headerli
       
     
     </summary>
@@ -73,7 +73,7 @@
     
       
       
-        &lt;!-- build time:Wed Sep 12 2018 17:47:34 GMT+0800 (CST) --&gt;&lt;p&gt;网上找到很多前端实现文件预览方法，但都无法解决我的问题，产品需求中将文件上传到腾讯云的对象存储，返回一个URL，这个URL无法在网页中预览，浏览器将这个UR
+        &lt;!-- build time:Thu Mar 21 2019 11:30:29 GMT+0800 (CST) --&gt;&lt;p&gt;网上找到很多前端实现文件预览方法，但都无法解决我的问题，产品需求中将文件上传到腾讯云的对象存储，返回一个URL，这个URL无法在网页中预览，浏览器将这个UR
       
     
     </summary>
@@ -96,7 +96,7 @@
     
       
       
-        &lt;!-- build time:Wed Sep 12 2018 17:36:35 GMT+0800 (CST) --&gt;&lt;p&gt;接到产品需求，问能不能将前端上传的图片压缩？像移动端上传图片，一般都是超清、高清图片，大小也有10M，甚至一张图片大小有15M左右，这样大的图片上传到腾讯云
+        &lt;!-- build time:Thu Mar 21 2019 11:30:29 GMT+0800 (CST) --&gt;&lt;p&gt;接到产品需求，问能不能将前端上传的图片压缩？像移动端上传图片，一般都是超清、高清图片，大小也有10M，甚至一张图片大小有15M左右，这样大的图片上传到腾讯云
       
     
     </summary>
@@ -119,7 +119,7 @@
     
       
       
-        &lt;!-- build time:Wed Sep 12 2018 17:36:35 GMT+0800 (CST) --&gt;&lt;h2 id=&quot;1、前端实现pdf文件在线预览功能&quot;&gt;&lt;a href=&quot;#1、前端实现pdf文件在线预览功能&quot; class=&quot;headerlink&quot; title=
+        &lt;!-- build time:Thu Mar 21 2019 11:30:29 GMT+0800 (CST) --&gt;&lt;h2 id=&quot;1、前端实现pdf文件在线预览功能&quot;&gt;&lt;a href=&quot;#1、前端实现pdf文件在线预览功能&quot; class=&quot;headerlink&quot; title=
       
     
     </summary>
@@ -142,7 +142,7 @@
     
       
       
-        &lt;!-- build time:Wed Sep 12 2018 17:36:35 GMT+0800 (CST) --&gt;&lt;p&gt;作为一个前端开发者，相信很多同道中人在微信公众号的开发中被坑的很惨，我也分享开发过程中的一点点经验给大家，可以减少很多弯路。由于项目需要，前端开发使用的是a
+        &lt;!-- build time:Thu Mar 21 2019 11:30:29 GMT+0800 (CST) --&gt;&lt;p&gt;作为一个前端开发者，相信很多同道中人在微信公众号的开发中被坑的很惨，我也分享开发过程中的一点点经验给大家，可以减少很多弯路。由于项目需要，前端开发使用的是a
       
     
     </summary>
@@ -165,7 +165,7 @@
     
       
       
-        &lt;!-- build time:Wed Sep 12 2018 17:36:35 GMT+0800 (CST) --&gt;&lt;p&gt;本地调试是公众号开发过程中不可缺少的步骤，我们不可能每次开发都上传到服务器再用微信去查看本地效果，这样一方面效率低，另一方面存在一定的风险性。那么有没有什么
+        &lt;!-- build time:Thu Mar 21 2019 11:30:29 GMT+0800 (CST) --&gt;&lt;p&gt;本地调试是公众号开发过程中不可缺少的步骤，我们不可能每次开发都上传到服务器再用微信去查看本地效果，这样一方面效率低，另一方面存在一定的风险性。那么有没有什么
       
     
     </summary>
@@ -188,7 +188,7 @@
     
       
       
-        &lt;!-- build time:Wed Sep 12 2018 17:36:35 GMT+0800 (CST) --&gt;&lt;p&gt;实现文字滚动，第一时间想用swiper进行，但是需求功能较少，不需要引用外部swiper.js，直接用CSS的animate属性实现文字滚动，2秒滚动一次，
+        &lt;!-- build time:Thu Mar 21 2019 11:30:29 GMT+0800 (CST) --&gt;&lt;p&gt;实现文字滚动，第一时间想用swiper进行，但是需求功能较少，不需要引用外部swiper.js，直接用CSS的animate属性实现文字滚动，2秒滚动一次，
       
     
     </summary>

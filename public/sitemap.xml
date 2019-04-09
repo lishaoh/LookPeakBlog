@@ -72,13 +72,6 @@
   </url>
   
   <url>
-    <loc>blog.lookpeakfans.xyz/books/index.html</loc>
-    
-    <lastmod>2018-07-30T18:55:52.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>blog.lookpeakfans.xyz/categories/index.html</loc>
     
     <lastmod>2018-07-30T18:55:52.000Z</lastmod>
@@ -86,7 +79,7 @@
   </url>
   
   <url>
-    <loc>blog.lookpeakfans.xyz/repository/index.html</loc>
+    <loc>blog.lookpeakfans.xyz/books/index.html</loc>
     
     <lastmod>2018-07-30T18:55:52.000Z</lastmod>
     
@@ -94,6 +87,13 @@
   
   <url>
     <loc>blog.lookpeakfans.xyz/links/index.html</loc>
+    
+    <lastmod>2018-07-30T18:55:52.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>blog.lookpeakfans.xyz/repository/index.html</loc>
     
     <lastmod>2018-07-30T18:55:52.000Z</lastmod>
     

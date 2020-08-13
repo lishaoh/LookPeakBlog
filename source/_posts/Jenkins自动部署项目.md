@@ -90,7 +90,7 @@ git 提交代码到 git 仓库时 jenkins 自动构建，自动部署。
 
 <strong>安装 Generic Webhook Trigger 插件</strong> 在任务配置里勾选 Generic Webhook Trigger 即可。 触发器插件功能很强大，可以根据不同的触发参数触发不同的构建操作，比如我向远程仓库提交的是 master 分支的代码，就执行代码部署工作，我向远程仓库提交的是某个 feature 分支，就执行单元测试，单元测试通过后合并至 dev 分支。只要有提交就触发。
 
-<strong>设置 webhooks</strong> 在 git 仓库中设置 webhooks github： url:http://<User ID>:<API Token>@<Jenkins IP 地址>:端口/generic-webhook-trigger/invoke
+<strong>设置 webhooks</strong> 在 git 仓库中设置 webhooks github： url:http://<用户 id>:<api 对应 token>@<Jenkins IP 地址>:端口/generic-webhook-trigger/invoke
 
 userid 和 api token 在 jenkins 的系统管理-管理用户 Jenkins IP 地址和端口是为部署 jenkins 服务器的 ip 地址，端口号默认为 8080。 密码为 jenkins 账号 userid 对应的密码
 

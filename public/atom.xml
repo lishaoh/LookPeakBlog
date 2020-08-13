@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="blog.lookpeakfans.xyz/"/>
-  <updated>2020-08-13T07:19:20.293Z</updated>
+  <updated>2020-08-13T09:57:01.000Z</updated>
   <id>blog.lookpeakfans.xyz/</id>
   
   <author>
@@ -17,17 +17,63 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Jenkins自动化集成和部署</title>
-    <link href="blog.lookpeakfans.xyz/2020/08/12/Jenkins/"/>
-    <id>blog.lookpeakfans.xyz/2020/08/12/Jenkins/</id>
-    <published>2020-08-11T16:00:00.000Z</published>
-    <updated>2020-08-13T07:19:20.293Z</updated>
+    <title>Jenkins多个环境构建、部署</title>
+    <link href="blog.lookpeakfans.xyz/2020/08/13/Jenkins/"/>
+    <id>blog.lookpeakfans.xyz/2020/08/13/Jenkins/</id>
+    <published>2020-08-12T16:00:00.000Z</published>
+    <updated>2020-08-13T09:57:01.000Z</updated>
     
     <summary type="html">
     
       
       
-        &lt;!-- build time:Thu Aug 13 2020 15:20:37 GMT+0800 (GMT+08:00) --&gt;&lt;p&gt;&lt;a href=&quot;https://cdflove9426.github.io/deploy/jenkins_cicl.html#jenkins&quot;
+        &lt;!-- build time:Thu Aug 13 2020 17:57:14 GMT+0800 (GMT+08:00) --&gt;&lt;h3 id=&quot;前沿&quot;&gt;&lt;a href=&quot;#前沿&quot; class=&quot;headerlink&quot; title=&quot;前沿&quot;&gt;&lt;/a&gt;前沿&lt;/h3&gt;&lt;p&gt;前一章说到
+      
+    
+    </summary>
+    
+      <category term="前端" scheme="blog.lookpeakfans.xyz/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="自动化" scheme="blog.lookpeakfans.xyz/tags/%E8%87%AA%E5%8A%A8%E5%8C%96/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Nginx使用趟坑</title>
+    <link href="blog.lookpeakfans.xyz/2020/08/13/Nginx/"/>
+    <id>blog.lookpeakfans.xyz/2020/08/13/Nginx/</id>
+    <published>2020-08-12T16:00:00.000Z</published>
+    <updated>2020-08-13T09:24:07.084Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;!-- build time:Thu Aug 13 2020 17:53:42 GMT+0800 (GMT+08:00) --&gt;&lt;h2 id=&quot;阿里云重启服务器后nginx无法启动&quot;&gt;&lt;a href=&quot;#阿里云重启服务器后nginx无法启动&quot; class=&quot;headerlink
+      
+    
+    </summary>
+    
+      <category term="前端" scheme="blog.lookpeakfans.xyz/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="自动化" scheme="blog.lookpeakfans.xyz/tags/%E8%87%AA%E5%8A%A8%E5%8C%96/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Jenkins自动化集成和部署</title>
+    <link href="blog.lookpeakfans.xyz/2020/08/12/Jenkins/"/>
+    <id>blog.lookpeakfans.xyz/2020/08/12/Jenkins/</id>
+    <published>2020-08-11T16:00:00.000Z</published>
+    <updated>2020-08-13T08:00:54.734Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;!-- build time:Thu Aug 13 2020 17:53:42 GMT+0800 (GMT+08:00) --&gt;&lt;p&gt;&lt;a href=&quot;https://cdflove9426.github.io/deploy/jenkins_cicl.html#jenkins&quot;
       
     
     </summary>

@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>blog.lookpeakfans.xyz/2020/08/12/Jenkins/</loc>
+    
+    <lastmod>2020-08-13T06:15:53.465Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>blog.lookpeakfans.xyz/2019/03/15/csdn/</loc>
     
     <lastmod>2019-03-21T03:29:12.672Z</lastmod>
@@ -72,20 +79,6 @@
   </url>
   
   <url>
-    <loc>blog.lookpeakfans.xyz/books/index.html</loc>
-    
-    <lastmod>2018-07-30T18:55:52.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>blog.lookpeakfans.xyz/categories/index.html</loc>
-    
-    <lastmod>2018-07-30T18:55:52.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>blog.lookpeakfans.xyz/links/index.html</loc>
     
     <lastmod>2018-07-30T18:55:52.000Z</lastmod>
@@ -93,7 +86,21 @@
   </url>
   
   <url>
+    <loc>blog.lookpeakfans.xyz/books/index.html</loc>
+    
+    <lastmod>2018-07-30T18:55:52.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>blog.lookpeakfans.xyz/repository/index.html</loc>
+    
+    <lastmod>2018-07-30T18:55:52.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>blog.lookpeakfans.xyz/categories/index.html</loc>
     
     <lastmod>2018-07-30T18:55:52.000Z</lastmod>
     

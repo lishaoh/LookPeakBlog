@@ -86,7 +86,7 @@ git 提交代码到 git 仓库时 jenkins 自动构建，自动部署。
 2. git 账号名和密码
 3. 选择分支！
 
-![](../images/jenkins01.png)
+![](/images/jenkins01.png)
 
 <strong>安装 Generic Webhook Trigger 插件</strong> 在任务配置里勾选 Generic Webhook Trigger 即可。 触发器插件功能很强大，可以根据不同的触发参数触发不同的构建操作，比如我向远程仓库提交的是 master 分支的代码，就执行代码部署工作，我向远程仓库提交的是某个 feature 分支，就执行单元测试，单元测试通过后合并至 dev 分支。只要有提交就触发。
 
@@ -94,7 +94,7 @@ git 提交代码到 git 仓库时 jenkins 自动构建，自动部署。
 
 userid 和 api token 在 jenkins 的系统管理-管理用户 Jenkins IP 地址和端口是为部署 jenkins 服务器的 ip 地址，端口号默认为 8080。 密码为 jenkins 账号 userid 对应的密码
 
-![](../images/jenkins02.png)
+![](/images/jenkins02.png)
 
 <strong>测试钩子</strong> 点击 test,就可以触发钩子。 jenkins 开始执行任务,如果没有配置任务，默认只会在你提交新代码后，将新代码拉取到 jenkins 服务器上（jenkins 的工作环境）。
 
@@ -110,7 +110,7 @@ nvm wrapper不稳的！！影响构建。 改用 NodeJS Plug吧
 
 安装后 进入 系统管理->Global Tool Configuration，配置 node 下载及安装
 
-![](../images/jenkins03.png)
+![](/images/jenkins03.png)
 
 回到项目的配置中，找到【构建环境】，勾选 Provide Node & npm bin/ folder to PATH
 
@@ -127,7 +127,7 @@ npm run build
 
 以后向 git 仓库提交代码，jenkins 就会自动构建好项目。
 
-![](../images/jenkins04.png)
+![](/images/jenkins04.png)
 
 Finished 状态的如果是
 
@@ -213,7 +213,9 @@ rm -rf dist.tar.gz
 
 1. Jenkins Location 找到系统管理员邮件地址，输入发送邮件的邮箱地址
 2. 在邮件通知中输入配置
-   ![](../images/jenkins05.png)
+   
+   ![](/images/jenkins05.png)
+   
    配置好了之后可以勾选“通过发送测试邮件测试配置”来测试配置是否成功
 3. 需要更高级的邮件通知功能需要再安装一个 Jenkins 插件：`Email Extension Plugin`
 
